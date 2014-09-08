@@ -7,6 +7,7 @@
 //
 
 #import "GVDetailViewController.h"
+#import <Parse/Parse.h>
 
 @interface GVDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -36,7 +37,18 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        PFObject *object = self.detailItem;
+        self.deviceId.text = object[@"dev_id"];
+        self.userId.text = object[@"user_id"];
+        self.checkoutDate.text = object.createdAt.description;
+        
+        PFFile *thumbnail = object[@"signature"];
+        [thumbnail getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                self.signatureImage.image = image;
+            }
+        }];
     }
 }
 

@@ -11,6 +11,8 @@
 @interface GVDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deviceId;
+@property (weak, nonatomic) IBOutlet UILabel *userId;
+@property (weak, nonatomic) IBOutlet UILabel *checkoutDate;
+@property (weak, nonatomic) IBOutlet UIImageView *signatureImage;
 @end
