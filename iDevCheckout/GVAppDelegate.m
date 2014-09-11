@@ -7,14 +7,16 @@
 //
 
 #import "GVAppDelegate.h"
+#import "Constants.h"
+
 #import <Parse/Parse.h>
 
 @implementation GVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse setApplicationId:@"AGs2nPlOxM7rA1BnUAbeVySTSRud6EhL7JF8sd4f"
-                  clientKey:@"z5CgnppcixOqpAzHOdnTfT6ktKKzk6aicH8p1Rvb"];
+    [Parse setApplicationId:PARSE_APP_ID
+                  clientKey:PARSE_CLIENT_ID];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

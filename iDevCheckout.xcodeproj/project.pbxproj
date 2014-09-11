@@ -37,6 +37,8 @@
 		9E33549519B77FFD009412F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549419B77FFD009412F9 /* Security.framework */; };
 		9E33549719B78009009412F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549619B78009009412F9 /* StoreKit.framework */; };
 		9E33549919B78017009412F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549819B78017009412F9 /* SystemConfiguration.framework */; };
+		9E9E8A5E19C095F6006EF62F /* GVAddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A5D19C095F6006EF62F /* GVAddUserViewController.m */; };
+		9E9E8A6219C0C132006EF62F /* GVDashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A6119C0C132006EF62F /* GVDashBoardController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,11 @@
 		9E33549419B77FFD009412F9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9E33549619B78009009412F9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E33549819B78017009412F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9E9E8A5C19C095F6006EF62F /* GVAddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVAddUserViewController.h; sourceTree = "<group>"; };
+		9E9E8A5D19C095F6006EF62F /* GVAddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVAddUserViewController.m; sourceTree = "<group>"; };
+		9E9E8A5F19C09BD6006EF62F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9E9E8A6019C0C132006EF62F /* GVDashBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVDashBoardController.h; path = ../GVDashBoardController.h; sourceTree = "<group>"; };
+		9E9E8A6119C0C132006EF62F /* GVDashBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVDashBoardController.m; path = ../GVDashBoardController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +176,8 @@
 		9E33544F19B77E09009412F9 /* iDevCheckout */ = {
 			isa = PBXGroup;
 			children = (
+				9E9E8A6019C0C132006EF62F /* GVDashBoardController.h */,
+				9E9E8A6119C0C132006EF62F /* GVDashBoardController.m */,
 				9E22EBF919BE413200058581 /* beep.mp3 */,
 				9E33545819B77E09009412F9 /* GVAppDelegate.h */,
 				9E33545919B77E09009412F9 /* GVAppDelegate.m */,
@@ -184,6 +193,9 @@
 				9E22EBF719BE3EAD00058581 /* ScanBarCodeViewController.m */,
 				9E33546719B77E09009412F9 /* Images.xcassets */,
 				9E33545019B77E09009412F9 /* Supporting Files */,
+				9E9E8A5C19C095F6006EF62F /* GVAddUserViewController.h */,
+				9E9E8A5D19C095F6006EF62F /* GVAddUserViewController.m */,
+				9E9E8A5F19C09BD6006EF62F /* Constants.h */,
 			);
 			path = iDevCheckout;
 			sourceTree = "<group>";
@@ -318,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E22EBF819BE3EAE00058581 /* ScanBarCodeViewController.m in Sources */,
+				9E9E8A5E19C095F6006EF62F /* GVAddUserViewController.m in Sources */,
 				9E33545619B77E09009412F9 /* main.m in Sources */,
+				9E9E8A6219C0C132006EF62F /* GVDashBoardController.m in Sources */,
 				9E33546319B77E09009412F9 /* GVMasterViewController.m in Sources */,
 				9E33546619B77E09009412F9 /* GVDetailViewController.m in Sources */,
 				9E22EBF119BE1E9D00058581 /* GVUserTableViewController.m in Sources */,

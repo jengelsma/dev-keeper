@@ -169,7 +169,9 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     NSLog(@"who hoo!");
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -218,7 +220,7 @@
             [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
 */
             // make user hold steady on the barcode for a few seconds to make sure its the correct one.
-            if(++_scanCnt > 50) {
+            if(++_scanCnt > 25) {
                 _isReading = NO;
                 NSLog(@"scanned barcode %@",[metadataObj stringValue]);
                 //[self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
@@ -235,18 +237,12 @@
 
             }
         }
-    } else {
-    
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _highlightView.frame = highlightViewRect;
-            [self.viewPreview bringSubviewToFront:_highlightView];
-            
-        });
     }
 
+}
 
-    
-    
+- (IBAction)cancelScan:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -1,22 +1,18 @@
 //
-//  GVUserTableViewController.m
+//  GVDashBoardController.m
 //  iDevCheckout
 //
-//  Created by Jonathan Engelsma on 9/8/14.
+//  Created by Jonathan Engelsma on 9/10/14.
 //  Copyright (c) 2014 Jonathan Engelsma. All rights reserved.
 //
 
-#import <Parse/Parse.h>
-#import "GVUserTableViewController.h"
+#import "GVDashBoardController.h"
 
-@interface GVUserTableViewController ()
-{
-    NSArray *_objects;
-}
+@interface GVDashBoardController ()
+
 @end
 
-@implementation GVUserTableViewController
-
+@implementation GVDashBoardController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,12 +27,11 @@
 {
     [super viewDidLoad];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self loadUserData];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,56 +40,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) loadUserData
-{
-    PFQuery *query = [PFQuery queryWithClassName:@"Users"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d users.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
-            _objects = objects;
-            [self.tableView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-}
-
-- (IBAction)refreshUsers:(UIRefreshControl *)sender {
-    [self loadUserData];
-    [sender endRefreshing];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return  _objects.count;
+    return 0;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    PFObject *object = _objects[indexPath.row];
-    cell.textLabel.text = object[@"user_name"];
-    cell.detailTextLabel.text = object[@"user_id"];
+    // Configure the cell...
     
     return cell;
 }
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -144,7 +115,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
 
 @end
