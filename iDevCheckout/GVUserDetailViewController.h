@@ -6,11 +6,13 @@
 //  Copyright (c) 2014 Jonathan Engelsma. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface GVAddUserViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+#import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+
+@interface GVUserDetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet PFImageView *userImage;
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userEmail;
-
+@property (strong,nonatomic) PFObject* user;
 @end

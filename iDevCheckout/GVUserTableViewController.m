@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import "GVUserTableViewController.h"
+#import "GVUserDetailViewController.h"
 
 @interface GVUserTableViewController ()
 {
@@ -91,7 +92,13 @@
     PFObject *object = _objects[indexPath.row];
     cell.textLabel.text = object[@"user_name"];
     cell.detailTextLabel.text = object[@"user_id"];
-    
+    PFFile *userImageFile = object[@"user_photo"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            cell.imageView.image = image;
+        }
+    }];
     return cell;
 }
 
@@ -134,16 +141,24 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    PFObject *object = nil;
+    GVUserDetailViewController *destCtrl = [segue destinationViewController];
+    
+    // if we are editing an existing user, set the model.
+    if(![sender isKindOfClass:[UIBarButtonItem class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        object = _objects[indexPath.row];
+    }
+    destCtrl.user = object;
+    
 }
-*/
+
 
 
 

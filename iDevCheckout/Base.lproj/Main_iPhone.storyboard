@@ -55,7 +55,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="-270"/>
+            <point key="canvasLocation" x="874" y="-355"/>
         </scene>
         <!--User Table View Controller - Users-->
         <scene sceneID="EqT-CG-jJa">
@@ -66,35 +66,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="9Fa-xN-x8f" detailTextLabel="qTd-Sb-Saw" imageView="gtx-Tl-jeB" style="IBUITableViewCellStyleSubtitle" id="056-cD-2vo">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="XU8-hr-u1Y" detailTextLabel="4E5-eZ-3jK" imageView="3R2-Kg-lKj" style="IBUITableViewCellStyleSubtitle" id="056-cD-2vo">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="056-cD-2vo" id="CIy-lP-Uxh">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Fa-xN-x8f">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XU8-hr-u1Y">
                                             <rect key="frame" x="73" y="3" width="34" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qTd-Sb-Saw">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4E5-eZ-3jK">
                                             <rect key="frame" x="73" y="25" width="43" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="userImage" id="gtx-Tl-jeB">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="userImage" id="3R2-Kg-lKj">
                                             <rect key="frame" x="15" y="0.0" width="43" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="suE-fT-IOO" kind="modal" id="svl-N5-rho"/>
+                                    <segue destination="vjQ-7N-kSR" kind="push" id="lWy-bY-l1Q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,7 +106,7 @@
                     <navigationItem key="navigationItem" title="Users" id="DfL-hu-24s">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mSS-VB-zeM">
                             <connections>
-                                <segue destination="vjQ-7N-kSR" kind="modal" id="gWP-8c-Jsi"/>
+                                <segue destination="vjQ-7N-kSR" kind="push" id="gWP-8c-Jsi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -220,61 +220,54 @@
             </objects>
             <point key="canvasLocation" x="429" y="-611"/>
         </scene>
-        <!--Add User View Controller - Add User-->
+        <!--User Detail View Controller - User Detail-->
         <scene sceneID="dq3-1E-pAH">
             <objects>
-                <viewController id="vjQ-7N-kSR" customClass="GVAddUserViewController" sceneMemberID="viewController">
+                <viewController id="vjQ-7N-kSR" customClass="GVUserDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uhs-AX-bri"/>
                         <viewControllerLayoutGuide type="bottom" id="4tX-0Z-cET"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YbV-tM-Cpy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userCamera" translatesAutoresizingMaskIntoConstraints="NO" id="uKv-dl-GRn">
-                                <rect key="frame" x="60" y="66" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userCamera" translatesAutoresizingMaskIntoConstraints="NO" id="uKv-dl-GRn" customClass="PFImageView">
+                                <rect key="frame" x="73" y="8" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the user's name." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cR-OX-PAM">
-                                <rect key="frame" x="20" y="274" width="280" height="30"/>
+                                <rect key="frame" x="20" y="214" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the user's email address." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsW-sI-8mz">
-                                <rect key="frame" x="20" y="320" width="280" height="30"/>
+                                <rect key="frame" x="20" y="260" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6C-lu-XVE">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="pMb-hd-4Dw">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZCj-py-84I">
-                                            <connections>
-                                                <action selector="cancelAddUser:" destination="vjQ-7N-kSR" id="DEd-ec-0V5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="WFp-BO-eMU">
-                                            <connections>
-                                                <action selector="saveUser:" destination="vjQ-7N-kSR" id="UMu-Vo-YEW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Add User" id="F44-5L-Gpb"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="User Detail" id="F44-5L-Gpb">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9w6-Kd-jbN">
+                            <connections>
+                                <action selector="cancelAddUser:" destination="vjQ-7N-kSR" id="Ftl-hH-8Hu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="HUc-Dh-xJU">
+                            <connections>
+                                <action selector="saveUser:" destination="vjQ-7N-kSR" id="6bN-yk-cnN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="userEmail" destination="FsW-sI-8mz" id="1VI-YS-1H8"/>
-                        <outlet property="userImage" destination="uKv-dl-GRn" id="UZ2-Cq-xgT"/>
+                        <outlet property="userImage" destination="uKv-dl-GRn" id="a8R-Vp-9bz"/>
                         <outlet property="userName" destination="6cR-OX-PAM" id="jWr-5A-LMW"/>
                     </connections>
                 </viewController>
@@ -422,6 +415,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="svl-N5-rho"/>
+        <segue reference="lWy-bY-l1Q"/>
     </inferredMetricsTieBreakers>
 </document>

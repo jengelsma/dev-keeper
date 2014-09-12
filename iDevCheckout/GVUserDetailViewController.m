@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Jonathan Engelsma. All rights reserved.
 //
 
-#import "GVAddUserViewController.h"
+#import "GVUserDetailViewController.h"
 #import "Constants.h"
 
 #import <Parse/Parse.h>
 
-@interface GVAddUserViewController ()
-
+@interface GVUserDetailViewController ()
+@property (assign, nonatomic) BOOL newImage;
 @end
 
-@implementation GVAddUserViewController
+@implementation GVUserDetailViewController
 {
     UIImagePickerController *photoPick;
 }
@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.newImage = NO;
     self.userImage.userInteractionEnabled = YES;
     UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoTouched:)];
     self.userImage.gestureRecognizers = @[tapRecognizer];
@@ -55,6 +56,17 @@
     }
     self.userEmail.delegate = self;
     self.userName.delegate = self;
+    
+    // if a model was provided, populate fields.
+    if(self.user != nil) {
+        self.userName.text = self.user[@"user_name"];
+        self.userEmail.text = self.user[@"user_id"];
+        PFFile *userImageFile = self.user[@"user_photo"];
+        if(userImageFile) {
+            self.userImage.file = userImageFile;
+            [self.userImage loadInBackground];
+        }
+    }
 
 }
 
@@ -115,6 +127,7 @@
     //    UIImage *editImage = info[UIImagePickerControllerEditedImage];
     UIImage *capturedPhoto = info[UIImagePickerControllerEditedImage];
     self.userImage.image = capturedPhoto;
+    self.newImage = YES;
 /*
 #ifdef DEBUG
     NSLog(@"%s updating photo of %@ %@ (%.0fx%.0f)", __FUNCTION__,
@@ -165,50 +178,69 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (IBAction)cancelAddUser:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveUser:(id)sender {
-    [self.userEmail resignFirstResponder];
-    [self.userName resignFirstResponder];
-     
-    PFQuery *query = [PFQuery queryWithClassName:USER_TABLE];
-    [query whereKey:@"user_id" equalTo:self.userEmail.text];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            if(objects.count == 0) {
-                NSString *imageFileName = [NSString stringWithFormat:@"%@.jpg" , self.userName.text];
-                NSData *imageData = UIImageJPEGRepresentation(self.userImage.image, 0.05f);
-                PFFile *file = [PFFile fileWithName:imageFileName data:imageData];
-                [file saveInBackground];
-                PFObject *newUser = [PFObject objectWithClassName:USER_TABLE];
-                newUser[@"user_id"] = self.userEmail.text;
-                newUser[@"user_name"] = self.userName.text;
-                newUser[@"user_photo"] = file;
-                [newUser saveInBackground];
+    
+    if(self.user != nil) {
+        self.user[@"user_id"] = self.userEmail.text;
+        self.user[@"user_name"] = self.userName.text;
+        if(self.newImage) {
+            NSString *imageFileName = [NSString stringWithFormat:@"%@.jpg" , self.userName.text];
+            NSData *imageData = UIImageJPEGRepresentation(self.userImage.image, 0.05f);
+            PFFile *file = [PFFile fileWithName:imageFileName data:imageData];
+            [file saveInBackground];
+            self.user[@"user_photo"] = file;
+        }
+        [self.user saveInBackground];
+    } else {
+        
+        // this is a brand new user!  Make sure we don't already have that email address out there.
+        PFQuery *query = [PFQuery queryWithClassName:USER_TABLE];
+        [query whereKey:@"user_id" equalTo:self.userEmail.text];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                if(objects.count == 0) {
+                    PFObject *newUser = [PFObject objectWithClassName:USER_TABLE];
+                    if(self.newImage) {
+                        NSString *imageFileName = [NSString stringWithFormat:@"%@.jpg" , self.userName.text];
+                        NSData *imageData = UIImageJPEGRepresentation(self.userImage.image, 0.05f);
+                        PFFile *file = [PFFile fileWithName:imageFileName data:imageData];
+                        [file saveInBackground];
+                        newUser[@"user_photo"] = file;
+                    }
+                    newUser[@"user_id"] = self.userEmail.text;
+                    newUser[@"user_name"] = self.userName.text;
+                    
+                    [newUser saveInBackground];
+                } else {
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Duplicate Email Address"
+                                                                 message:@"A user with that email address already exists!"
+                                                                delegate:nil
+                                                       cancelButtonTitle:nil
+                                                       otherButtonTitles:@"OK", nil];
+                    [av show];
+                }
             } else {
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Duplicate Email Address"
-                                                              message:@"A user with that email address already exists!"
-                                                             delegate:nil
-                                                    cancelButtonTitle:nil
-                                                    otherButtonTitles:@"OK", nil];
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Could not save!"
+                                                             message:@"Unable to save user detail.  Check your network connection and try again."
+                                                            delegate:nil
+                                                   cancelButtonTitle:nil
+                                                   otherButtonTitles:@"OK", nil];
                 [av show];
             }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Duplicate Email Address"
-                                                          message:@"A user with that email address already exists!"
-                                                         delegate:nil
-                                                cancelButtonTitle:nil
-                                                otherButtonTitles:@"OK", nil];
-            [av show];
-        }
-    }];
-    [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
