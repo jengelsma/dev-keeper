@@ -7,6 +7,7 @@
 //
 
 #import "ScanBarCodeViewController.h"
+#import "Constants.h"
 
 @interface ScanBarCodeViewController ()
 {
@@ -169,9 +170,13 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     NSLog(@"who hoo!");
-    //[self.navigationController popViewControllerAnimated:YES];
-    //[self.navigationController popToRootViewControllerAnimated:YES];
+
     [self dismissViewControllerAnimated:YES completion:nil];
+    if(buttonIndex) {
+        // Gather the signature
+        [self performSegueWithIdentifier: @"signature" sender: self];        
+        
+    }
 }
 
 
@@ -243,6 +248,7 @@
 
 - (IBAction)cancelScan:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
