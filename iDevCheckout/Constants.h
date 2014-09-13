@@ -17,5 +17,6 @@
 
 #define USER_TABLE @"Users"
 #define DEVICE_LOAN_TABLE @"DevOut"
+#define DEVICE_TABLE @"Devices"
 
 #endif

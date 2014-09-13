@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GVUserTableViewController : UITableViewController 
-
+#import <Parse/Parse.h>
+#define USER_EDIT_MODE 0
+#define USER_SELECT_MODE 1
+@interface GVUserTableViewController : PFQueryTableViewController
+@property (assign,nonatomic) int displayMode;
 @end

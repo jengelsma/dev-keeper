@@ -177,7 +177,7 @@
 
 - (void)confirmScan:(id)barcode
 {
-    NSString *msg = [NSString stringWithFormat:@"Device %@ will be checked out by John Doe?", barcode];
+    NSString *msg = [NSString stringWithFormat:@"Device %@ will be checked out by %@?", barcode,self.user[@"user_name"]];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Device Scanned!"
                                                     message:msg
                                                    delegate:self

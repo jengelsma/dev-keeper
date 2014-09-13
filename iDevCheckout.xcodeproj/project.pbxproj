@@ -38,7 +38,8 @@
 		9E33549719B78009009412F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549619B78009009412F9 /* StoreKit.framework */; };
 		9E33549919B78017009412F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549819B78017009412F9 /* SystemConfiguration.framework */; };
 		9E9E8A5E19C095F6006EF62F /* GVUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A5D19C095F6006EF62F /* GVUserDetailViewController.m */; };
-		9E9E8A6219C0C132006EF62F /* GVDashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A6119C0C132006EF62F /* GVDashBoardController.m */; };
+		9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */; };
+		9E9E8A8819C3634E006EF62F /* GVDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A8719C3634E006EF62F /* GVDashboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +94,10 @@
 		9E9E8A5C19C095F6006EF62F /* GVUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserDetailViewController.h; sourceTree = "<group>"; };
 		9E9E8A5D19C095F6006EF62F /* GVUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDetailViewController.m; sourceTree = "<group>"; };
 		9E9E8A5F19C09BD6006EF62F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		9E9E8A6019C0C132006EF62F /* GVDashBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVDashBoardController.h; path = ../GVDashBoardController.h; sourceTree = "<group>"; };
-		9E9E8A6119C0C132006EF62F /* GVDashBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVDashBoardController.m; path = ../GVDashBoardController.m; sourceTree = "<group>"; };
+		9E9E8A8319C35B57006EF62F /* GVDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVDeviceTableViewController.h; sourceTree = "<group>"; };
+		9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVDeviceTableViewController.m; sourceTree = "<group>"; };
+		9E9E8A8619C3634E006EF62F /* GVDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVDashboardViewController.h; sourceTree = "<group>"; };
+		9E9E8A8719C3634E006EF62F /* GVDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVDashboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,12 +179,12 @@
 		9E33544F19B77E09009412F9 /* iDevCheckout */ = {
 			isa = PBXGroup;
 			children = (
-				9E9E8A6019C0C132006EF62F /* GVDashBoardController.h */,
-				9E9E8A6119C0C132006EF62F /* GVDashBoardController.m */,
 				9E22EBF919BE413200058581 /* beep.mp3 */,
 				9E33545819B77E09009412F9 /* GVAppDelegate.h */,
 				9E33545919B77E09009412F9 /* GVAppDelegate.m */,
 				9E33545B19B77E09009412F9 /* Main_iPhone.storyboard */,
+				9E9E8A8619C3634E006EF62F /* GVDashboardViewController.h */,
+				9E9E8A8719C3634E006EF62F /* GVDashboardViewController.m */,
 				9E33545E19B77E09009412F9 /* Main_iPad.storyboard */,
 				9E33546119B77E09009412F9 /* GVMasterViewController.h */,
 				9E33546219B77E09009412F9 /* GVMasterViewController.m */,
@@ -189,6 +192,8 @@
 				9E33546519B77E09009412F9 /* GVDetailViewController.m */,
 				9E22EBEF19BE1E9D00058581 /* GVUserTableViewController.h */,
 				9E22EBF019BE1E9D00058581 /* GVUserTableViewController.m */,
+				9E9E8A8319C35B57006EF62F /* GVDeviceTableViewController.h */,
+				9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */,
 				9E22EBF619BE3EAD00058581 /* ScanBarCodeViewController.h */,
 				9E22EBF719BE3EAD00058581 /* ScanBarCodeViewController.m */,
 				9E33546719B77E09009412F9 /* Images.xcassets */,
@@ -329,10 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9E8A8819C3634E006EF62F /* GVDashboardViewController.m in Sources */,
 				9E22EBF819BE3EAE00058581 /* ScanBarCodeViewController.m in Sources */,
+				9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */,
 				9E9E8A5E19C095F6006EF62F /* GVUserDetailViewController.m in Sources */,
 				9E33545619B77E09009412F9 /* main.m in Sources */,
-				9E9E8A6219C0C132006EF62F /* GVDashBoardController.m in Sources */,
 				9E33546319B77E09009412F9 /* GVMasterViewController.m in Sources */,
 				9E33546619B77E09009412F9 /* GVDetailViewController.m in Sources */,
 				9E22EBF119BE1E9D00058581 /* GVUserTableViewController.m in Sources */,

@@ -9,15 +9,64 @@
 #import <Parse/Parse.h>
 #import "GVUserTableViewController.h"
 #import "GVUserDetailViewController.h"
+#import "ScanBarCodeViewController.h"
 
 @interface GVUserTableViewController ()
 {
-    NSArray *_objects;
+//    NSArray *_objects;
+    NSIndexPath* lastSelectedIndexPath;
 }
 @end
 
 @implementation GVUserTableViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        // Custom the table
+        
+        // The className to query on
+        self.parseClassName = @"Users";
+        
+        // The key of the PFObject to display in the label of the default cell style
+        self.textKey = @"user_name";
+        
+        self.placeholderImage = [UIImage imageNamed:@"userImage"];
+        
+        self.imageKey = @"user_photo";
+        
+        // The title for this table in the Navigation Controller.
+        self.title = @"Users";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = YES;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = YES;
+        
+        // The number of objects to show per page
+        self.objectsPerPage = 10;
+    }
+    return self;
+}
+
+
+// Override to customize what kind of query to perform on the class. The default is to query for
+// all objects ordered by createdAt descending.
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    // If no objects are loaded in memory, we look to the cache first to fill the table
+    // and then subsequently do a query against the network.
+    if ([self.objects count] == 0) {
+        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
+    
+    [query orderByDescending:@"user_name"];
+    
+    return query;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,13 +80,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    lastSelectedIndexPath = nil;
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self loadUserData];
+//    [self loadUserData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +96,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
 - (void) loadUserData
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Users"];
@@ -70,9 +121,10 @@
     [self loadUserData];
     [sender endRefreshing];
 }
+*/
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -84,14 +136,19 @@
     // Return the number of rows in the section.
     return  _objects.count;
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+*/
+- (PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    PFObject *object = _objects[indexPath.row];
+    //PFObject *object = _objects[indexPath.row];
     cell.textLabel.text = object[@"user_name"];
-    cell.detailTextLabel.text = object[@"user_id"];
+    if(self.displayMode == USER_EDIT_MODE) {
+        cell.detailTextLabel.text = object[@"user_id"];
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     PFFile *userImageFile = object[@"user_photo"];
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
@@ -101,7 +158,6 @@
     }];
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -141,24 +197,53 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(self.displayMode == USER_SELECT_MODE) {
+        if(lastSelectedIndexPath) {
+            
+            UITableViewCell *lastCell = [tableView cellForRowAtIndexPath:lastSelectedIndexPath];
+            lastCell.accessoryType = UITableViewCellAccessoryNone;
+        }
+        
+        
+        UITableViewCell *currentCell = [tableView cellForRowAtIndexPath:indexPath];
+        currentCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        
+        lastSelectedIndexPath = indexPath;
+    }
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PFObject *object = nil;
-    GVUserDetailViewController *destCtrl = [segue destinationViewController];
-    
-    // if we are editing an existing user, set the model.
-    if(![sender isKindOfClass:[UIBarButtonItem class]]) {
+            PFObject *object = nil;
+    if(self.displayMode == USER_EDIT_MODE) {
+
+        GVUserDetailViewController *destCtrl = [segue destinationViewController];
+        
+        // if we are editing an existing user, set the model.
+        if(![sender isKindOfClass:[UIBarButtonItem class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            //object = _objects[indexPath.row];
+            object = self.objects[indexPath.row];
+        }
+        destCtrl.user = object;
+    } else {
+        ScanBarCodeViewController *destCtrl = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        object = _objects[indexPath.row];
+        object = self.objects[indexPath.row];
+        destCtrl.user = object;
     }
-    destCtrl.user = object;
-    
 }
 
+#pragma mark - Cancel / Save Buttons for User Select Mode
+- (IBAction)cancelUserSelect:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 
