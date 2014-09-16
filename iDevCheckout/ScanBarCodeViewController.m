@@ -174,8 +174,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     if(buttonIndex) {
         // Gather the signature
-        [self performSegueWithIdentifier: @"signature" sender: self];        
-        
+        [self performSegueWithIdentifier: @"signature" sender: self];
+//        UIViewController *vc = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"signature"];
+//        [self.navigationController presentViewController:vc animated:YES completion:nil];
     }
 }
 

@@ -29,4 +29,8 @@
     }
 }
 
+- (IBAction)unwindToSaveCheckin:(UIStoryboardSegue *)unwindSegue
+{
+    NSLog(@"You have unwound!");
+}
 @end

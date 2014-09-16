@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GVDashboardViewController : UIViewController
-
+- (IBAction)unwindToSaveCheckin:(UIStoryboardSegue *)unwindSegue;
 @end
