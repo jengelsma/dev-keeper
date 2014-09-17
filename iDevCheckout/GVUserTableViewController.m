@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import "GVUserTableViewController.h"
 #import "GVUserDetailViewController.h"
-#import "ScanBarCodeViewController.h"
+#import "GVScanBarCodeViewController.h"
 
 @interface GVUserTableViewController ()
 {
@@ -220,7 +220,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-            PFObject *object = nil;
+    PFObject *object = nil;
     if(self.displayMode == USER_EDIT_MODE) {
 
         GVUserDetailViewController *destCtrl = [segue destinationViewController];
@@ -233,7 +233,7 @@
         }
         destCtrl.user = object;
     } else {
-        ScanBarCodeViewController *destCtrl = [segue destinationViewController];
+        GVScanBarCodeViewController *destCtrl = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         object = self.objects[indexPath.row];
         destCtrl.user = object;

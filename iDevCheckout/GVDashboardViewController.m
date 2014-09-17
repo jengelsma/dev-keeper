@@ -38,9 +38,7 @@
 
 - (IBAction)unwindToSaveCheckin:(UIStoryboardSegue *)unwindSegue
 {
-    NSLog(@"You have saved!");
 
-    
     GVSignatureViewController* src = unwindSegue.sourceViewController;
     
     PFObject *checkInRecord = [PFObject objectWithClassName:@"DevOut"];
@@ -50,10 +48,38 @@
     checkInRecord[@"dev_id"] = device[@"device_id"];
     checkInRecord[@"user_id"] = user[@"user_id"];
     
+    NSString *imageFileName = @"sign.jpg" ;
+    NSData *imageData = UIImageJPEGRepresentation(src.mainImage.image, 0.05f);
+    PFFile *file = [PFFile fileWithName:imageFileName data:imageData];
+    [file saveInBackground];
+    checkInRecord[@"signature"] = file;
+    
     [checkInRecord saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        // alert here.
+        if(succeeded) {
+            NSString *msg = [NSString stringWithFormat:@"Device %@ has been checked out by %@", device[@"device_id"],user[@"user_name"]];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Device Checked Out!"
+                                                            message:msg
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+        } else {
+            NSLog(@"oops, probs");
+        }
         
     }];
     
 }
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    // ok, now have the table reload
+    UITableViewController *tbc = (UITableViewController *)self.childViewControllers[0];
+    [tbc.tableView reloadData];
+
+}
+
+
 @end

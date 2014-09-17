@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Gabriel Theodoropoulos. All rights reserved.
 //
 
-#import "ScanBarCodeViewController.h"
+#import "GVScanBarCodeViewController.h"
 #import "Constants.h"
 #import "GVSignatureViewController.h"
 #import "GVNewDeviceTableViewController.h"
 
-@interface ScanBarCodeViewController ()
+@interface GVScanBarCodeViewController ()
 {
     UIView *_highlightView;
     int _scanCnt;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation ScanBarCodeViewController
+@implementation GVScanBarCodeViewController
 
 - (void)viewDidLoad
 {

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E22EBF119BE1E9D00058581 /* GVUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22EBF019BE1E9D00058581 /* GVUserTableViewController.m */; };
-		9E22EBF819BE3EAE00058581 /* ScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22EBF719BE3EAD00058581 /* ScanBarCodeViewController.m */; };
+		9E22EBF819BE3EAE00058581 /* GVScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22EBF719BE3EAD00058581 /* GVScanBarCodeViewController.m */; };
 		9E22EBFA19BE413200058581 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E22EBF919BE413200058581 /* beep.mp3 */; };
 		9E33544A19B77E09009412F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33544919B77E09009412F9 /* Foundation.framework */; };
 		9E33544C19B77E09009412F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33544B19B77E09009412F9 /* CoreGraphics.framework */; };
@@ -57,8 +57,8 @@
 /* Begin PBXFileReference section */
 		9E22EBEF19BE1E9D00058581 /* GVUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserTableViewController.h; sourceTree = "<group>"; };
 		9E22EBF019BE1E9D00058581 /* GVUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserTableViewController.m; sourceTree = "<group>"; };
-		9E22EBF619BE3EAD00058581 /* ScanBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanBarCodeViewController.h; sourceTree = "<group>"; };
-		9E22EBF719BE3EAD00058581 /* ScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanBarCodeViewController.m; sourceTree = "<group>"; };
+		9E22EBF619BE3EAD00058581 /* GVScanBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVScanBarCodeViewController.h; sourceTree = "<group>"; };
+		9E22EBF719BE3EAD00058581 /* GVScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVScanBarCodeViewController.m; sourceTree = "<group>"; };
 		9E22EBF919BE413200058581 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		9E33544619B77E09009412F9 /* iDevCheckout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDevCheckout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E33544919B77E09009412F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,8 +204,8 @@
 				9E22EBF019BE1E9D00058581 /* GVUserTableViewController.m */,
 				9E9E8A8319C35B57006EF62F /* GVDeviceTableViewController.h */,
 				9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */,
-				9E22EBF619BE3EAD00058581 /* ScanBarCodeViewController.h */,
-				9E22EBF719BE3EAD00058581 /* ScanBarCodeViewController.m */,
+				9E22EBF619BE3EAD00058581 /* GVScanBarCodeViewController.h */,
+				9E22EBF719BE3EAD00058581 /* GVScanBarCodeViewController.m */,
 				9E33546719B77E09009412F9 /* Images.xcassets */,
 				9E33545019B77E09009412F9 /* Supporting Files */,
 				9E9E8A5C19C095F6006EF62F /* GVUserDetailViewController.h */,
@@ -345,7 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9E8A8819C3634E006EF62F /* GVDashboardViewController.m in Sources */,
-				9E22EBF819BE3EAE00058581 /* ScanBarCodeViewController.m in Sources */,
+				9E22EBF819BE3EAE00058581 /* GVScanBarCodeViewController.m in Sources */,
 				9E67B5FF19C9CCDB00EC1602 /* GVNewDeviceTableViewController.m in Sources */,
 				9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */,
 				9E9E8A5E19C095F6006EF62F /* GVUserDetailViewController.m in Sources */,

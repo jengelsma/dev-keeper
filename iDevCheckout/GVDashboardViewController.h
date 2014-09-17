@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GVDashboardViewController : UIViewController
+@interface GVDashboardViewController : UIViewController <UIAlertViewDelegate>
 - (IBAction)unwindToSaveCheckin:(UIStoryboardSegue *)unwindSegue;
 - (IBAction)unwindCancelCheckin:(UIStoryboardSegue *)unwindSegue;
 @end

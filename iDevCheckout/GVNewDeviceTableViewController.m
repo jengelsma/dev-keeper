@@ -17,6 +17,7 @@
 {
     NSArray *_formPickerData;
     NSArray *_osPickerData;
+    PFObject *_device;
 }
 @property (assign) BOOL formPickerIsShowing;
 @property (assign) BOOL osPickerIsShowing;
@@ -216,13 +217,13 @@
     return YES;
 }
 - (IBAction)saveButtonPressed:(id)sender {
-    PFObject *device = [PFObject objectWithClassName:@"Devices"];
-    device[@"device_id"] = self.barcode;
-    device[@"name"] = self.deviceName.text;
-    device[@"os"] = self.osPickerLabel.text;
-    device[@"type"] = self.formFactor.text;
+    _device = [PFObject objectWithClassName:@"Devices"];
+    _device[@"device_id"] = self.barcode;
+    _device[@"name"] = self.deviceName.text;
+    _device[@"os"] = self.osPickerLabel.text;
+    _device[@"type"] = self.formFactor.text;
     
-    [device saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [_device saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
         [self performSegueWithIdentifier: @"signature" sender: self];
     }];
@@ -244,6 +245,7 @@
         GVSignatureViewController *destCtrl = segue.destinationViewController;
         destCtrl.user = self.user;
         destCtrl.deviceId = self.barcode;
+        destCtrl.device = _device;
     }
 }
 

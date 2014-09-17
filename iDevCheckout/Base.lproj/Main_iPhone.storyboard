@@ -427,7 +427,7 @@
         <!--Scan Bar Code View Controller-->
         <scene sceneID="ux6-A1-1nW">
             <objects>
-                <viewController id="suE-fT-IOO" customClass="ScanBarCodeViewController" sceneMemberID="viewController">
+                <viewController id="suE-fT-IOO" customClass="GVScanBarCodeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mft-HS-zl2"/>
                         <viewControllerLayoutGuide type="bottom" id="oKn-4q-Jl8"/>
@@ -439,25 +439,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-rA-LVQ">
                                 <rect key="frame" x="20" y="20" width="280" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold steady to scan the barcode!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="319" translatesAutoresizingMaskIntoConstraints="NO" id="g50-Ja-7ZD">
-                                        <rect key="frame" x="-19" y="405" width="319" height="78"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="78" id="SRR-mg-AC3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="g50-Ja-7ZD" firstAttribute="leading" secondItem="cBh-rA-LVQ" secondAttribute="leading" constant="-19" id="0qQ-VS-33b"/>
-                                    <constraint firstAttribute="trailing" secondItem="g50-Ja-7ZD" secondAttribute="trailing" constant="-20" id="UeW-Av-tV9"/>
-                                    <constraint firstAttribute="bottom" secondItem="g50-Ja-7ZD" secondAttribute="bottom" constant="-19" id="VUG-Hs-CN3"/>
-                                </constraints>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hold steady to scan the barcode!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="319" translatesAutoresizingMaskIntoConstraints="NO" id="g50-Ja-7ZD">
+                                <rect key="frame" x="0.0" y="426" width="319" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="SRR-mg-AC3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -829,7 +822,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dlt-rB-4aj"/>
-        <segue reference="ci1-Xq-Aft"/>
+        <segue reference="RG8-e0-cpv"/>
         <segue reference="lWy-bY-l1Q"/>
     </inferredMetricsTieBreakers>
 </document>
