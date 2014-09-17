@@ -23,6 +23,7 @@
     
 }
 
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     mouseSwiped = NO;
@@ -80,6 +81,7 @@
     self.tempDrawImage.image = nil;
     UIGraphicsEndImageContext();
 }
+
 
 
 #pragma mark - Screen rotation handling

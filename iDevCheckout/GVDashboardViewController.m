@@ -8,6 +8,7 @@
 
 #import "GVDashboardViewController.h"
 #import "GVUserTableViewController.h"
+#import "GVSignatureViewController.h"
 
 @implementation GVDashboardViewController
 
@@ -29,8 +30,30 @@
     }
 }
 
+- (IBAction)unwindCancelCheckin:(UIStoryboardSegue *)unwindSegue
+{
+    NSLog(@"You have cancled checkout!");
+    //Notify user that the checkout was canceled.  
+}
+
 - (IBAction)unwindToSaveCheckin:(UIStoryboardSegue *)unwindSegue
 {
-    NSLog(@"You have unwound!");
+    NSLog(@"You have saved!");
+
+    
+    GVSignatureViewController* src = unwindSegue.sourceViewController;
+    
+    PFObject *checkInRecord = [PFObject objectWithClassName:@"DevOut"];
+    PFObject *user = src.user;
+    PFObject *device= src.device;
+    
+    checkInRecord[@"dev_id"] = device[@"device_id"];
+    checkInRecord[@"user_id"] = user[@"user_id"];
+    
+    [checkInRecord saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        // alert here.
+        
+    }];
+    
 }
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface GVSignatureViewController : UIViewController
 {
@@ -20,4 +21,8 @@
 }
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+@property (strong, nonatomic) PFObject *user;
+@property (strong, nonatomic) NSString *deviceId;
+@property (strong, nonatomic) PFObject *device;
+
 @end

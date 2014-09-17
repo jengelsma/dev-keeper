@@ -10,4 +10,5 @@
 
 @interface GVDashboardViewController : UIViewController
 - (IBAction)unwindToSaveCheckin:(UIStoryboardSegue *)unwindSegue;
+- (IBAction)unwindCancelCheckin:(UIStoryboardSegue *)unwindSegue;
 @end

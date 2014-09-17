@@ -8,17 +8,20 @@
 
 #import "ScanBarCodeViewController.h"
 #import "Constants.h"
+#import "GVSignatureViewController.h"
+#import "GVNewDeviceTableViewController.h"
 
 @interface ScanBarCodeViewController ()
 {
     UIView *_highlightView;
     int _scanCnt;
+    PFObject *_device;
 }
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL isReading;
-
+@property (nonatomic, strong) NSString *barcode;
 -(BOOL)startReading;
 -(void)stopReading;
 -(void)loadBeepSound;
@@ -220,32 +223,62 @@
             // stop reading and change the bar button item's title and the flag's value.
             // Everything is done on the main thread.
             /*
-            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            
-            
-            [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
-*/
+             [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
+             
+             
+             [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
+             */
             // make user hold steady on the barcode for a few seconds to make sure its the correct one.
             if(++_scanCnt > 25) {
                 _isReading = NO;
                 NSLog(@"scanned barcode %@",[metadataObj stringValue]);
+                
+                self.barcode = [metadataObj stringValue];
                 //[self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
                 // If the audio player is not nil, then play the sound effect.
                 if (_audioPlayer) {
                     [_audioPlayer play];
                 }
                 _scanCnt = 0;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self stopReading];
-                    [self confirmScan:[metadataObj stringValue]];
-                    
-                });
-
+                
+                // Check if a record already exists.  If not, we need to create one.
+                PFQuery *query = [PFQuery queryWithClassName:@"Devices"];
+                [query whereKey:@"device_id" equalTo:self.barcode];
+                NSArray *objects = [query findObjects];
+                if(objects.count == 0) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self stopReading];
+                        [self performSegueWithIdentifier: @"newdevice" sender: self];
+                    });
+                } else {
+                    _device = objects[0];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self stopReading];
+                        [self confirmScan:self.barcode];
+                        
+                    });
+                }
+                
             }
         }
     }
-
+    
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"signature"]) {
+        GVSignatureViewController *destCtrl = segue.destinationViewController;
+        destCtrl.user = self.user;
+        destCtrl.deviceId = self.barcode;
+        destCtrl.device = _device;
+    } else     if([segue.identifier isEqualToString:@"newdevice"]) {
+        GVNewDeviceTableViewController *destCtrl = segue.destinationViewController;
+        destCtrl.barcode = self.barcode;
+        destCtrl.user = self.user;
+    }
+}
+
 
 - (IBAction)cancelScan:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
