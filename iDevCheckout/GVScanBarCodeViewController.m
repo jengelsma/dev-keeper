@@ -178,11 +178,25 @@
     if(buttonIndex) {
         // Gather the signature
         [self performSegueWithIdentifier: @"signature" sender: self];
-//        UIViewController *vc = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"signature"];
-//        [self.navigationController presentViewController:vc animated:YES completion:nil];
+
+    } else {
+        _isReading = YES;
+        [self startReading];
     }
 }
 
+- (void)reportCheckOut:(id)barcode
+{
+    NSString *msg = [NSString stringWithFormat:@"Device %@ is already checked out.", barcode];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Device Scanned!"
+                                                    message:msg
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+
+    
+}
 
 - (void)confirmScan:(id)barcode
 {
@@ -251,12 +265,24 @@
                         [self performSegueWithIdentifier: @"newdevice" sender: self];
                     });
                 } else {
+                    // check if device is already checked out.
                     _device = objects[0];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self stopReading];
-                        [self confirmScan:self.barcode];
-                        
-                    });
+                    PFQuery *query = [PFQuery queryWithClassName:@"DevOut"];
+                    [query whereKey:@"dev_id" equalTo:self.barcode];
+                    NSArray *checkouts = [query findObjects];
+                    if(checkouts.count == 0) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self stopReading];
+                            [self confirmScan:self.barcode];
+                        });
+                    } else {
+                        // alert that this device is already checked out.
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self stopReading];
+                            [self reportCheckOut:self.barcode];
+                        });
+
+                    }
                 }
                 
             }
