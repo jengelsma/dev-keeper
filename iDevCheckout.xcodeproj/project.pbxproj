@@ -186,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				9E22EBF919BE413200058581 /* beep.mp3 */,
+				9E9E8A5F19C09BD6006EF62F /* Constants.h */,
 				9E33545819B77E09009412F9 /* GVAppDelegate.h */,
 				9E33545919B77E09009412F9 /* GVAppDelegate.m */,
 				9E33545B19B77E09009412F9 /* Main_iPhone.storyboard */,
@@ -202,15 +203,14 @@
 				9E33546519B77E09009412F9 /* GVDetailViewController.m */,
 				9E22EBEF19BE1E9D00058581 /* GVUserTableViewController.h */,
 				9E22EBF019BE1E9D00058581 /* GVUserTableViewController.m */,
+				9E9E8A5C19C095F6006EF62F /* GVUserDetailViewController.h */,
+				9E9E8A5D19C095F6006EF62F /* GVUserDetailViewController.m */,
 				9E9E8A8319C35B57006EF62F /* GVDeviceTableViewController.h */,
 				9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */,
 				9E22EBF619BE3EAD00058581 /* GVScanBarCodeViewController.h */,
 				9E22EBF719BE3EAD00058581 /* GVScanBarCodeViewController.m */,
 				9E33546719B77E09009412F9 /* Images.xcassets */,
 				9E33545019B77E09009412F9 /* Supporting Files */,
-				9E9E8A5C19C095F6006EF62F /* GVUserDetailViewController.h */,
-				9E9E8A5D19C095F6006EF62F /* GVUserDetailViewController.m */,
-				9E9E8A5F19C09BD6006EF62F /* Constants.h */,
 			);
 			path = iDevCheckout;
 			sourceTree = "<group>";

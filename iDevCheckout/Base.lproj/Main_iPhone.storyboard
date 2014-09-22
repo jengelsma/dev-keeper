@@ -363,7 +363,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DevKeeper" id="7z5-BY-EhB"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fy-I0-CSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -822,7 +821,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dlt-rB-4aj"/>
-        <segue reference="RG8-e0-cpv"/>
         <segue reference="lWy-bY-l1Q"/>
+        <segue reference="RG8-e0-cpv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
     UIView *_highlightView;
     int _scanCnt;
     PFObject *_device;
+    PFObject *_checkout;
 }
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
@@ -176,8 +177,21 @@
 
     [self dismissViewControllerAnimated:YES completion:nil];
     if(buttonIndex) {
-        // Gather the signature
-        [self performSegueWithIdentifier: @"signature" sender: self];
+        
+        if(self.displayMode == CHECK_OUT_MODE) {
+            [self performSegueWithIdentifier: @"signature" sender: self];
+        } else {
+            if(_checkout != nil) {
+                PFObject *archiveLog = [PFObject objectWithClassName:@"CheckoutLog"];
+                archiveLog[@"dev_id"] = _checkout[@"dev_id"];
+                archiveLog[@"user_id"] = _checkout[@"user_id"];
+                archiveLog[@"signature"] = _checkout[@"signature"];
+                archiveLog[@"checkout_date"] = [_checkout createdAt];
+                [archiveLog saveInBackground];
+                [_checkout deleteInBackground];
+            }
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
 
     } else {
         _isReading = YES;
@@ -187,7 +201,12 @@
 
 - (void)reportCheckOut:(id)barcode
 {
-    NSString *msg = [NSString stringWithFormat:@"Device %@ is already checked out.", barcode];
+    NSString *msg;
+    if(self.displayMode == CHECK_OUT_MODE) {
+        msg = [NSString stringWithFormat:@"Device %@ is already checked out.", barcode];
+    } else {
+        msg = [NSString stringWithFormat:@"Device %@ is currently not checked out!", barcode];
+    }
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Device Scanned!"
                                                     message:msg
                                                    delegate:self
@@ -200,7 +219,12 @@
 
 - (void)confirmScan:(id)barcode
 {
-    NSString *msg = [NSString stringWithFormat:@"Device %@ will be checked out by %@?", barcode,self.user[@"user_name"]];
+    NSString *msg;
+    if(self.displayMode == CHECK_OUT_MODE) {
+        msg= [NSString stringWithFormat:@"Device %@ will be checked out by %@?", barcode,self.user[@"user_name"]];
+    } else {
+        msg = [NSString stringWithFormat:@"User is returning device %@?", barcode];
+    }
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Device Scanned!"
                                                     message:msg
                                                    delegate:self
@@ -255,22 +279,43 @@
                 }
                 _scanCnt = 0;
                 
-                // Check if a record already exists.  If not, we need to create one.
-                PFQuery *query = [PFQuery queryWithClassName:@"Devices"];
-                [query whereKey:@"device_id" equalTo:self.barcode];
-                NSArray *objects = [query findObjects];
-                if(objects.count == 0) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self stopReading];
-                        [self performSegueWithIdentifier: @"newdevice" sender: self];
-                    });
+                if(self.displayMode == CHECK_OUT_MODE) {
+                    // Check if a record already exists.  If not, we need to create one.
+                    PFQuery *query = [PFQuery queryWithClassName:@"Devices"];
+                    [query whereKey:@"device_id" equalTo:self.barcode];
+                    NSArray *objects = [query findObjects];
+                    if(objects.count == 0) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self stopReading];
+                            [self performSegueWithIdentifier: @"newdevice" sender: self];
+                        });
+                    } else {
+                        // check if device is already checked out.
+                        _device = objects[0];
+                        PFQuery *query = [PFQuery queryWithClassName:@"DevOut"];
+                        [query whereKey:@"dev_id" equalTo:self.barcode];
+                        NSArray *checkouts = [query findObjects];
+                        if(checkouts.count == 0) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [self stopReading];
+                                [self confirmScan:self.barcode];
+                            });
+                        } else {
+                            // alert that this device is already checked out.
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [self stopReading];
+                                [self reportCheckOut:self.barcode];
+                            });
+                            
+                        }
+                    }
                 } else {
                     // check if device is already checked out.
-                    _device = objects[0];
                     PFQuery *query = [PFQuery queryWithClassName:@"DevOut"];
                     [query whereKey:@"dev_id" equalTo:self.barcode];
                     NSArray *checkouts = [query findObjects];
-                    if(checkouts.count == 0) {
+                    if(checkouts.count > 0) {
+                        _checkout = checkouts[0];
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [self stopReading];
                             [self confirmScan:self.barcode];
@@ -281,8 +326,8 @@
                             [self stopReading];
                             [self reportCheckOut:self.barcode];
                         });
-
                     }
+
                 }
                 
             }
