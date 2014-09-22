@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
                BuildableName = "DevAgent2.app"
-               BlueprintName = "DevAgent2"
-               ReferencedContainer = "container:DevAgent2.xcodeproj">
+               BlueprintName = "DevAgent"
+               ReferencedContainer = "container:DevAgent.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EAA21EF19D0BF9E0089D7D7"
                BuildableName = "DevAgent2Tests.xctest"
-               BlueprintName = "DevAgent2Tests"
-               ReferencedContainer = "container:DevAgent2.xcodeproj">
+               BlueprintName = "DevAgentTests"
+               ReferencedContainer = "container:DevAgent.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
             BuildableName = "DevAgent2.app"
-            BlueprintName = "DevAgent2"
-            ReferencedContainer = "container:DevAgent2.xcodeproj">
+            BlueprintName = "DevAgent"
+            ReferencedContainer = "container:DevAgent.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
             BuildableName = "DevAgent2.app"
-            BlueprintName = "DevAgent2"
-            ReferencedContainer = "container:DevAgent2.xcodeproj">
+            BlueprintName = "DevAgent"
+            ReferencedContainer = "container:DevAgent.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
             BuildableName = "DevAgent2.app"
-            BlueprintName = "DevAgent2"
-            ReferencedContainer = "container:DevAgent2.xcodeproj">
+            BlueprintName = "DevAgent"
+            ReferencedContainer = "container:DevAgent.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

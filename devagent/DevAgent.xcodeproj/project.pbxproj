@@ -34,23 +34,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9EAA21CF19D0BF9E0089D7D7 /* DevAgent2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAgent2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAA21CF19D0BF9E0089D7D7 /* DevAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAA21D219D0BF9E0089D7D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9EAA21D419D0BF9E0089D7D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9EAA21D619D0BF9E0089D7D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9EAA21DA19D0BF9E0089D7D7 /* DevAgent2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevAgent2-Info.plist"; sourceTree = "<group>"; };
+		9EAA21DA19D0BF9E0089D7D7 /* DevAgent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevAgent-Info.plist"; sourceTree = "<group>"; };
 		9EAA21DC19D0BF9E0089D7D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EAA21DE19D0BF9E0089D7D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9EAA21E019D0BF9E0089D7D7 /* DevAgent2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevAgent2-Prefix.pch"; sourceTree = "<group>"; };
+		9EAA21E019D0BF9E0089D7D7 /* DevAgent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevAgent-Prefix.pch"; sourceTree = "<group>"; };
 		9EAA21E119D0BF9E0089D7D7 /* GVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GVAppDelegate.h; sourceTree = "<group>"; };
 		9EAA21E219D0BF9E0089D7D7 /* GVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GVAppDelegate.m; sourceTree = "<group>"; };
 		9EAA21E519D0BF9E0089D7D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EAA21E719D0BF9E0089D7D7 /* GVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GVViewController.h; sourceTree = "<group>"; };
 		9EAA21E819D0BF9E0089D7D7 /* GVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GVViewController.m; sourceTree = "<group>"; };
 		9EAA21EA19D0BF9E0089D7D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9EAA21F019D0BF9E0089D7D7 /* DevAgent2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevAgent2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAA21F019D0BF9E0089D7D7 /* DevAgentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevAgentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAA21F119D0BF9E0089D7D7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9EAA21F919D0BF9E0089D7D7 /* DevAgent2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevAgent2Tests-Info.plist"; sourceTree = "<group>"; };
+		9EAA21F919D0BF9E0089D7D7 /* DevAgentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevAgentTests-Info.plist"; sourceTree = "<group>"; };
 		9EAA21FB19D0BF9E0089D7D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EAA21FD19D0BF9E0089D7D7 /* DevAgent2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevAgent2Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +92,8 @@
 		9EAA21D019D0BF9E0089D7D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EAA21CF19D0BF9E0089D7D7 /* DevAgent2.app */,
-				9EAA21F019D0BF9E0089D7D7 /* DevAgent2Tests.xctest */,
+				9EAA21CF19D0BF9E0089D7D7 /* DevAgent.app */,
+				9EAA21F019D0BF9E0089D7D7 /* DevAgentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,10 +126,10 @@
 		9EAA21D919D0BF9E0089D7D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EAA21DA19D0BF9E0089D7D7 /* DevAgent2-Info.plist */,
+				9EAA21DA19D0BF9E0089D7D7 /* DevAgent-Info.plist */,
 				9EAA21DB19D0BF9E0089D7D7 /* InfoPlist.strings */,
 				9EAA21DE19D0BF9E0089D7D7 /* main.m */,
-				9EAA21E019D0BF9E0089D7D7 /* DevAgent2-Prefix.pch */,
+				9EAA21E019D0BF9E0089D7D7 /* DevAgent-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 		9EAA21F819D0BF9E0089D7D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EAA21F919D0BF9E0089D7D7 /* DevAgent2Tests-Info.plist */,
+				9EAA21F919D0BF9E0089D7D7 /* DevAgentTests-Info.plist */,
 				9EAA21FA19D0BF9E0089D7D7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -155,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9EAA21CE19D0BF9E0089D7D7 /* DevAgent2 */ = {
+		9EAA21CE19D0BF9E0089D7D7 /* DevAgent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EAA220119D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgent2" */;
+			buildConfigurationList = 9EAA220119D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgent" */;
 			buildPhases = (
 				9EAA21CB19D0BF9E0089D7D7 /* Sources */,
 				9EAA21CC19D0BF9E0089D7D7 /* Frameworks */,
@@ -167,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = DevAgent2;
+			name = DevAgent;
 			productName = DevAgent2;
-			productReference = 9EAA21CF19D0BF9E0089D7D7 /* DevAgent2.app */;
+			productReference = 9EAA21CF19D0BF9E0089D7D7 /* DevAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9EAA21EF19D0BF9E0089D7D7 /* DevAgent2Tests */ = {
+		9EAA21EF19D0BF9E0089D7D7 /* DevAgentTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EAA220419D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgent2Tests" */;
+			buildConfigurationList = 9EAA220419D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgentTests" */;
 			buildPhases = (
 				9EAA21EC19D0BF9E0089D7D7 /* Sources */,
 				9EAA21ED19D0BF9E0089D7D7 /* Frameworks */,
@@ -185,9 +185,9 @@
 			dependencies = (
 				9EAA21F619D0BF9E0089D7D7 /* PBXTargetDependency */,
 			);
-			name = DevAgent2Tests;
+			name = DevAgentTests;
 			productName = DevAgent2Tests;
-			productReference = 9EAA21F019D0BF9E0089D7D7 /* DevAgent2Tests.xctest */;
+			productReference = 9EAA21F019D0BF9E0089D7D7 /* DevAgentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9EAA21CA19D0BF9E0089D7D7 /* Build configuration list for PBXProject "DevAgent2" */;
+			buildConfigurationList = 9EAA21CA19D0BF9E0089D7D7 /* Build configuration list for PBXProject "DevAgent" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,8 +218,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9EAA21CE19D0BF9E0089D7D7 /* DevAgent2 */,
-				9EAA21EF19D0BF9E0089D7D7 /* DevAgent2Tests */,
+				9EAA21CE19D0BF9E0089D7D7 /* DevAgent */,
+				9EAA21EF19D0BF9E0089D7D7 /* DevAgentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,7 +269,7 @@
 /* Begin PBXTargetDependency section */
 		9EAA21F619D0BF9E0089D7D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9EAA21CE19D0BF9E0089D7D7 /* DevAgent2 */;
+			target = 9EAA21CE19D0BF9E0089D7D7 /* DevAgent */;
 			targetProxy = 9EAA21F519D0BF9E0089D7D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -378,9 +378,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DevAgent2/DevAgent2-Prefix.pch";
-				INFOPLIST_FILE = "DevAgent2/DevAgent2-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DevAgent2/DevAgent-Prefix.pch";
+				INFOPLIST_FILE = "DevAgent2/DevAgent-Info.plist";
+				PRODUCT_NAME = DevAgent;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,9 +391,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DevAgent2/DevAgent2-Prefix.pch";
-				INFOPLIST_FILE = "DevAgent2/DevAgent2-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DevAgent2/DevAgent-Prefix.pch";
+				INFOPLIST_FILE = "DevAgent2/DevAgent-Info.plist";
+				PRODUCT_NAME = DevAgent;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -413,8 +413,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DevAgent2Tests/DevAgent2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DevAgent2Tests/DevAgentTests-Info.plist";
+				PRODUCT_NAME = DevAgentTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -431,8 +431,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevAgent2/DevAgent2-Prefix.pch";
-				INFOPLIST_FILE = "DevAgent2Tests/DevAgent2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DevAgent2Tests/DevAgentTests-Info.plist";
+				PRODUCT_NAME = DevAgentTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -441,7 +441,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9EAA21CA19D0BF9E0089D7D7 /* Build configuration list for PBXProject "DevAgent2" */ = {
+		9EAA21CA19D0BF9E0089D7D7 /* Build configuration list for PBXProject "DevAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EAA21FF19D0BF9E0089D7D7 /* Debug */,
@@ -450,21 +450,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EAA220119D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgent2" */ = {
+		9EAA220119D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EAA220219D0BF9E0089D7D7 /* Debug */,
 				9EAA220319D0BF9E0089D7D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		9EAA220419D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgent2Tests" */ = {
+		9EAA220419D0BF9E0089D7D7 /* Build configuration list for PBXNativeTarget "DevAgentTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EAA220519D0BF9E0089D7D7 /* Debug */,
 				9EAA220619D0BF9E0089D7D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
