@@ -51,6 +51,8 @@
     _highlightView.layer.borderColor = [UIColor greenColor].CGColor;
     _highlightView.layer.borderWidth = 3;
     [self.viewPreview addSubview:_highlightView];
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -173,7 +175,6 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"who hoo!");
 
     [self dismissViewControllerAnimated:YES completion:nil];
     if(buttonIndex) {

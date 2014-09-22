@@ -237,6 +237,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         object = self.objects[indexPath.row];
         destCtrl.user = object;
+        destCtrl.displayMode = CHECK_OUT_MODE;
     }
 }
 

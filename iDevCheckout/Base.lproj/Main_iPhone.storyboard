@@ -280,7 +280,7 @@
                                 <items>
                                     <barButtonItem title="Checkin" id="TGB-t3-B9y">
                                         <connections>
-                                            <segue destination="suE-fT-IOO" kind="push" id="dlt-rB-4aj"/>
+                                            <segue destination="suE-fT-IOO" kind="push" identifier="CheckInDevice" id="dlt-rB-4aj"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="145" style="plain" systemItem="fixedSpace" id="h5p-nS-C8m"/>
@@ -820,7 +820,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dlt-rB-4aj"/>
+        <segue reference="r7R-iM-iNN"/>
         <segue reference="lWy-bY-l1Q"/>
         <segue reference="RG8-e0-cpv"/>
     </inferredMetricsTieBreakers>

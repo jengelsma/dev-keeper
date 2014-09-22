@@ -9,6 +9,7 @@
 #import "GVDashboardViewController.h"
 #import "GVUserTableViewController.h"
 #import "GVSignatureViewController.h"
+#import "GVScanBarCodeViewController.h"
 
 @implementation GVDashboardViewController
 
@@ -27,6 +28,9 @@
     } else if ([segue.identifier isEqualToString:@"EditUsers"]) {
         GVUserTableViewController *dest = [segue destinationViewController];
         dest.displayMode = USER_EDIT_MODE;
+    } else if([segue.identifier isEqualToString:@"CheckInDevice"]){
+        GVScanBarCodeViewController *dest = [segue destinationViewController];
+        dest.displayMode = CHECK_IN_MODE;
     }
 }
 
