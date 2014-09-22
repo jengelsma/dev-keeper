@@ -43,6 +43,31 @@
     self.navigationItem.rightBarButtonItem = addButton;
      */
     self.detailViewController = (GVDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    
+    
+    UIPasteboard *pasteboard = [UIPasteboard pasteboardWithName:@"youruniquestring" create:NO];
+    //NSLog([pasteboard string]);
+    if(pasteboard != nil) {
+        NSLog(@"unique device ID = %@", [pasteboard string]);
+    } else {
+        
+        //Create a unique id as a string
+        CFUUIDRef theUUID = CFUUIDCreate(NULL);
+        CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+        
+        //create a new pasteboard with a unique identifier
+        UIPasteboard *pasteboard = [UIPasteboard pasteboardWithName:@"youruniquestring" create:YES];
+        
+        [pasteboard setPersistent:YES];
+        
+        //save the unique identifier string that we created earlier
+        [pasteboard setString:((__bridge NSString*)string)];
+        
+        NSLog(@"newly generated device ID = %@", [pasteboard string]);
+        
+    }
+
 }
 
 
@@ -106,7 +131,7 @@
                                   macAddress[0], macAddress[1], macAddress[2],
                                   macAddress[3], macAddress[4], macAddress[5]];
     NSLog(@"Mac Address: %@", macAddressString);
-    
+    NSLog(@"UUID is %@", [UIDevice currentDevice].model);
     // Release the buffer memory
     free(msgBuffer);
     
