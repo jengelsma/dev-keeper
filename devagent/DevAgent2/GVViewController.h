@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GVViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *barcodeImage;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
 
 @end

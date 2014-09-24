@@ -21,6 +21,7 @@
 		9EAA21F419D0BF9E0089D7D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAA21D619D0BF9E0089D7D7 /* UIKit.framework */; };
 		9EAA21FC19D0BF9E0089D7D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA21FA19D0BF9E0089D7D7 /* InfoPlist.strings */; };
 		9EAA21FE19D0BF9E0089D7D7 /* DevAgent2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA21FD19D0BF9E0089D7D7 /* DevAgent2Tests.m */; };
+		9EAA229E19D3658D0089D7D7 /* GVHTTPCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA229D19D3658D0089D7D7 /* GVHTTPCommunication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		9EAA21F919D0BF9E0089D7D7 /* DevAgentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevAgentTests-Info.plist"; sourceTree = "<group>"; };
 		9EAA21FB19D0BF9E0089D7D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EAA21FD19D0BF9E0089D7D7 /* DevAgent2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevAgent2Tests.m; sourceTree = "<group>"; };
+		9EAA229C19D3658D0089D7D7 /* GVHTTPCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVHTTPCommunication.h; sourceTree = "<group>"; };
+		9EAA229D19D3658D0089D7D7 /* GVHTTPCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVHTTPCommunication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 			children = (
 				9EAA21E119D0BF9E0089D7D7 /* GVAppDelegate.h */,
 				9EAA21E219D0BF9E0089D7D7 /* GVAppDelegate.m */,
+				9EAA229C19D3658D0089D7D7 /* GVHTTPCommunication.h */,
+				9EAA229D19D3658D0089D7D7 /* GVHTTPCommunication.m */,
 				9EAA21E419D0BF9E0089D7D7 /* Main.storyboard */,
 				9EAA21E719D0BF9E0089D7D7 /* GVViewController.h */,
 				9EAA21E819D0BF9E0089D7D7 /* GVViewController.m */,
@@ -253,6 +258,7 @@
 				9EAA21DF19D0BF9E0089D7D7 /* main.m in Sources */,
 				9EAA21E919D0BF9E0089D7D7 /* GVViewController.m in Sources */,
 				9EAA21E319D0BF9E0089D7D7 /* GVAppDelegate.m in Sources */,
+				9EAA229E19D3658D0089D7D7 /* GVHTTPCommunication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

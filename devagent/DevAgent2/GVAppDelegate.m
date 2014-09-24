@@ -43,4 +43,28 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void) incrementNetworkActivity
+{
+    _networkActivityCounter += 1;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+-(void) decrementNetworkActivity{
+    
+    if(_networkActivityCounter > 0) {
+        _networkActivityCounter -= 1;
+    }
+    if(_networkActivityCounter == 0) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    }    
+}
+
+-(void) resetNetworkActivity
+{
+    _networkActivityCounter = 0;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
+}
+
 @end

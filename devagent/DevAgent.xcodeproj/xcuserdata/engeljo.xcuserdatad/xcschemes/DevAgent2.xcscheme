@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
-               BuildableName = "DevAgent2.app"
+               BuildableName = "DevAgent.app"
                BlueprintName = "DevAgent"
                ReferencedContainer = "container:DevAgent.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EAA21EF19D0BF9E0089D7D7"
-               BuildableName = "DevAgent2Tests.xctest"
+               BuildableName = "DevAgentTests.xctest"
                BlueprintName = "DevAgentTests"
                ReferencedContainer = "container:DevAgent.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
-            BuildableName = "DevAgent2.app"
+            BuildableName = "DevAgent.app"
             BlueprintName = "DevAgent"
             ReferencedContainer = "container:DevAgent.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
-            BuildableName = "DevAgent2.app"
+            BuildableName = "DevAgent.app"
             BlueprintName = "DevAgent"
             ReferencedContainer = "container:DevAgent.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EAA21CE19D0BF9E0089D7D7"
-            BuildableName = "DevAgent2.app"
+            BuildableName = "DevAgent.app"
             BlueprintName = "DevAgent"
             ReferencedContainer = "container:DevAgent.xcodeproj">
          </BuildableReference>
