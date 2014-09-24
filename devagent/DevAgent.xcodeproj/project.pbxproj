@@ -85,7 +85,7 @@
 		9EAA21C619D0BF9E0089D7D7 = {
 			isa = PBXGroup;
 			children = (
-				9EAA21D819D0BF9E0089D7D7 /* DevAgent2 */,
+				9EAA21D819D0BF9E0089D7D7 /* DevAgent */,
 				9EAA21F719D0BF9E0089D7D7 /* DevAgent2Tests */,
 				9EAA21D119D0BF9E0089D7D7 /* Frameworks */,
 				9EAA21D019D0BF9E0089D7D7 /* Products */,
@@ -112,7 +112,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9EAA21D819D0BF9E0089D7D7 /* DevAgent2 */ = {
+		9EAA21D819D0BF9E0089D7D7 /* DevAgent */ = {
 			isa = PBXGroup;
 			children = (
 				9EAA21E119D0BF9E0089D7D7 /* GVAppDelegate.h */,
@@ -125,6 +125,7 @@
 				9EAA21EA19D0BF9E0089D7D7 /* Images.xcassets */,
 				9EAA21D919D0BF9E0089D7D7 /* Supporting Files */,
 			);
+			name = DevAgent;
 			path = DevAgent2;
 			sourceTree = "<group>";
 		};

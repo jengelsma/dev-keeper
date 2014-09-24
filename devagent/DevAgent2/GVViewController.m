@@ -29,7 +29,15 @@
     self.idLabel.text = _deviceId;
     
     _http = [[GVHTTPCommunication alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CHART_URL,_deviceId]];
+    NSString *ustr = [NSString stringWithFormat:@"{\"id\" : \"%@\",\"man\" : \"%@\",\"model\" : \"%@\"}",_deviceId, @"Apple", [UIDevice currentDevice].model];
+    NSString *encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                  NULL,
+                                                                                  (CFStringRef)ustr,
+                                                                                  NULL,
+                                                                                  (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                  kCFStringEncodingUTF8 ));
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CHART_URL,encodedString]];
+    
     [_http retrieveURL:url successBlock:^(NSData *response) {
         
         UIImage *bc = [UIImage imageWithData:response];
