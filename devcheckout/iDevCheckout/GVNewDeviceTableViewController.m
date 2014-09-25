@@ -44,6 +44,9 @@
     
     self.deviceId.text = [NSString stringWithFormat:@"Device ID: %@", self.barcode];
     self.deviceName.delegate = self;
+    self.osPickerLabel.text = self.os;
+    self.formFactor.text = self.form;
+    self.deviceName.text = self.desc;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow) name:UIKeyboardWillShowNotification object:nil];
     [self hideFormPickerCells];

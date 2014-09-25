@@ -52,6 +52,12 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="pCc-0k-XyW"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="geT-ip-Whj"/>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Rv7-dc-LXw">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshTable:" destination="pGg-6v-bdr" eventType="valueChanged" id="5fT-Ym-dXH"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -821,7 +827,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="r7R-iM-iNN"/>
+        <segue reference="ci1-Xq-Aft"/>
         <segue reference="lWy-bY-l1Q"/>
-        <segue reference="RG8-e0-cpv"/>
     </inferredMetricsTieBreakers>
 </document>

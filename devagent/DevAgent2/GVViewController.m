@@ -29,7 +29,15 @@
     self.idLabel.text = _deviceId;
     
     _http = [[GVHTTPCommunication alloc] init];
-    NSString *ustr = [NSString stringWithFormat:@"{\"id\" : \"%@\",\"man\" : \"%@\",\"model\" : \"%@\"}",_deviceId, @"Apple", [UIDevice currentDevice].model];
+    NSString *model = [[UIDevice currentDevice] model];
+    NSString *form;
+    if([model hasPrefix:@"iPhone"] || [model hasPrefix:@"iPod"]) {
+        form = @"Phone";
+    } else {
+        form = @"Tablet";
+    }
+    
+    NSString *ustr = [NSString stringWithFormat:@"{\"id\" : \"%@\",\"model\" : \"%@\",\"os\" : \"%@\",\"form_factor\" : \"%@\"}",_deviceId, model, @"Apple", form];
     NSString *encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                   NULL,
                                                                                   (CFStringRef)ustr,

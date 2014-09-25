@@ -15,6 +15,10 @@
 
 @interface GVScanBarCodeViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) PFObject *user;
+@property (strong, nonatomic) NSString *os;
+@property (strong, nonatomic) NSString *formFactor;
+@property (strong, nonatomic) NSString *desc;
+
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (assign,nonatomic) int displayMode;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
