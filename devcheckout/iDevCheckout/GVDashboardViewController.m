@@ -51,6 +51,8 @@
     
     checkInRecord[@"dev_id"] = device[@"device_id"];
     checkInRecord[@"user_id"] = user[@"user_id"];
+    checkInRecord[@"user_obj"] = user;
+    checkInRecord[@"device_obj"] = device;
     
     NSString *imageFileName = @"sign.jpg" ;
     NSData *imageData = UIImageJPEGRepresentation(src.mainImage.image, 0.05f);

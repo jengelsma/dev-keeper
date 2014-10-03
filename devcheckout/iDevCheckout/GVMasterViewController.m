@@ -63,6 +63,8 @@
 - (void)loadCheckouts
 {
     PFQuery *query = [PFQuery queryWithClassName:@"DevOut"];
+    [query includeKey:@"device_obj"];
+    [query includeKey:@"user_obj"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
@@ -112,8 +114,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     PFObject *object = _objects[indexPath.row];
-    cell.textLabel.text = object[@"dev_id"];
-    cell.detailTextLabel.text = object[@"user_id"];
+    PFObject *device = object[@"device_obj"];
+    PFObject *user = object[@"user_obj"];
+    
+    cell.textLabel.text = user[@"user_name"];
+    cell.detailTextLabel.text = device[@"name"];
     return cell;
 }
 
