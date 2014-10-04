@@ -57,4 +57,24 @@
     return query;
 }
 
+- (PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+{
+    PFTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    cell.textLabel.text = object[@"name"];
+    cell.detailTextLabel.text = object[@"device_id"];
+    cell.imageView.image = [UIImage imageNamed:@"deviceImage"];
+    
+    PFFile *devThumbnail = object[@"device_photo"];
+    if(devThumbnail) {
+        [devThumbnail getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                cell.imageView.image = image;
+            }
+        }];
+    }
+    return cell;
+}
+
 @end

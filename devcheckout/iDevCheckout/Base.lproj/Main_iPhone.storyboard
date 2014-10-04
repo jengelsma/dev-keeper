@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="6d1-ev-IeJ" detailTextLabel="acz-c4-zF7" imageView="VYr-qe-gnf" style="IBUITableViewCellStyleSubtitle" id="kcU-h0-kIM">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" textLabel="6d1-ev-IeJ" detailTextLabel="acz-c4-zF7" imageView="VYr-qe-gnf" style="IBUITableViewCellStyleSubtitle" id="kcU-h0-kIM">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kcU-h0-kIM" id="j69-sQ-Gwm">
@@ -84,21 +84,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6d1-ev-IeJ">
-                                            <rect key="frame" x="70" y="3" width="34" height="22"/>
+                                            <rect key="frame" x="73" y="3" width="34" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="acz-c4-zF7">
-                                            <rect key="frame" x="70" y="25" width="43" height="15"/>
+                                            <rect key="frame" x="73" y="25" width="43" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="deviceMenu" id="VYr-qe-gnf">
-                                            <rect key="frame" x="15" y="0.0" width="40" height="43"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="deviceImage" id="VYr-qe-gnf">
+                                            <rect key="frame" x="15" y="0.0" width="43" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -114,7 +114,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3Z-uv-UwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-1057"/>
+            <point key="canvasLocation" x="908" y="-1061"/>
         </scene>
         <!--User Table View Controller - Select a User-->
         <scene sceneID="NBg-jg-ddx">
@@ -821,7 +821,7 @@
                                     <constraint firstAttribute="width" constant="68" id="IDo-il-5bh"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deviceMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Lke-P0-m0h">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deviceImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lke-P0-m0h">
                                 <rect key="frame" x="20" y="47" width="68" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -937,6 +937,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="deviceImage" width="150" height="150"/>
         <image name="deviceMenu" width="316" height="336"/>
         <image name="userCamera" width="200" height="200"/>
         <image name="userImage" width="200" height="200"/>
