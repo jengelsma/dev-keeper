@@ -24,6 +24,7 @@
         
         self.imageKey = @"device_photo";
         
+        self.placeholderImage = [UIImage imageNamed:@"deviceMenu"];
         // The title for this table in the Navigation Controller.
         self.title = @"Devices";
         

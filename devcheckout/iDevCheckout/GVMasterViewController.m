@@ -119,6 +119,15 @@
     
     cell.textLabel.text = user[@"user_name"];
     cell.detailTextLabel.text = device[@"name"];
+    
+    PFFile *userImageFile = user[@"user_photo"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            cell.imageView.image = image;
+        }
+    }];
+
     return cell;
 }
 

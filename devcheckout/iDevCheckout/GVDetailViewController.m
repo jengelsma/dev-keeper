@@ -37,18 +37,50 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        PFObject *object = self.detailItem;
-        self.deviceId.text = object[@"dev_id"];
-        self.userId.text = object[@"user_id"];
-        self.checkoutDate.text = object.createdAt.description;
         
+        // device
+        PFObject *object = self.detailItem;
+        PFObject *device = object[@"device_obj"];
+        PFObject *user = object[@"user_obj"];
+        self.deviceId.text = object[@"dev_id"];
+        self.deviceName.text = device[@"name"];
+        self.deviceOsForm.text = [NSString stringWithFormat:@"%@/%@", device[@"type"],device[@"os"]];
+        self.checkoutDate.text = object.createdAt.description;
+        PFFile *deviceThumbnail = device[@"device_photo"];
+        if(deviceThumbnail) {
+            [deviceThumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if(!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    self.deviceThumbnail.image = image;
+                }
+            }];
+        }
+        
+
+        
+        // checkout
+        self.userName.text = user[@"user_name"];
+        self.userId.text = object[@"user_id"];
+        PFFile *userThumbnail = user[@"user_photo"];
+        if(userThumbnail) {
+            [userThumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if(!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    self.userThumbnail.image = image;
+                }
+            }];
+        }
+        
+        // signature
         PFFile *thumbnail = object[@"signature"];
-        [thumbnail getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:imageData];
-                self.signatureImage.image = image;
-            }
-        }];
+        if(thumbnail) {
+            [thumbnail getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:imageData];
+                    self.signatureImage.image = image;
+                }
+            }];
+        }
     }
 }
 
