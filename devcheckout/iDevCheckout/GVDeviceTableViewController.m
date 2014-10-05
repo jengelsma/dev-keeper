@@ -7,6 +7,7 @@
 //
 
 #import "GVDeviceTableViewController.h"
+#import "GVDeviceDetailController.h"
 
 @implementation GVDeviceTableViewController
 
@@ -75,6 +76,16 @@
         }];
     }
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PFObject *object = nil;
+    
+    GVDeviceDetailController *destCtrl = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    object = self.objects[indexPath.row];
+    destCtrl.device = object;
 }
 
 @end

@@ -42,6 +42,7 @@
 		9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */; };
 		9E9E8A8819C3634E006EF62F /* GVDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A8719C3634E006EF62F /* GVDashboardViewController.m */; };
 		9EB801E319C497CC006E3482 /* GVSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB801E219C497CC006E3482 /* GVSignatureViewController.m */; };
+		9EF1BAED19E0A54000D56CAF /* GVDeviceDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF1BAEC19E0A54000D56CAF /* GVDeviceDetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		9E9E8A8719C3634E006EF62F /* GVDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVDashboardViewController.m; sourceTree = "<group>"; };
 		9EB801E119C497CC006E3482 /* GVSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVSignatureViewController.h; sourceTree = "<group>"; };
 		9EB801E219C497CC006E3482 /* GVSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVSignatureViewController.m; sourceTree = "<group>"; };
+		9EF1BAEB19E0A54000D56CAF /* GVDeviceDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVDeviceDetailController.h; sourceTree = "<group>"; };
+		9EF1BAEC19E0A54000D56CAF /* GVDeviceDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVDeviceDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				9E9E8A5D19C095F6006EF62F /* GVUserDetailViewController.m */,
 				9E9E8A8319C35B57006EF62F /* GVDeviceTableViewController.h */,
 				9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */,
+				9EF1BAEB19E0A54000D56CAF /* GVDeviceDetailController.h */,
+				9EF1BAEC19E0A54000D56CAF /* GVDeviceDetailController.m */,
 				9E22EBF619BE3EAD00058581 /* GVScanBarCodeViewController.h */,
 				9E22EBF719BE3EAD00058581 /* GVScanBarCodeViewController.m */,
 				9E33546719B77E09009412F9 /* Images.xcassets */,
@@ -345,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9E8A8819C3634E006EF62F /* GVDashboardViewController.m in Sources */,
+				9EF1BAED19E0A54000D56CAF /* GVDeviceDetailController.m in Sources */,
 				9E22EBF819BE3EAE00058581 /* GVScanBarCodeViewController.m in Sources */,
 				9E67B5FF19C9CCDB00EC1602 /* GVNewDeviceTableViewController.m in Sources */,
 				9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */,
