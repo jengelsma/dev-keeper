@@ -36,7 +36,7 @@
 
 - (IBAction)unwindCancelCheckin:(UIStoryboardSegue *)unwindSegue
 {
-    NSLog(@"You have cancled checkout!");
+    NSLog(@"You have canceled this checkout!");
     //Notify user that the checkout was canceled.  
 }
 

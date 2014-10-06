@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GVDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface GVDetailViewController : UIViewController <UISplitViewControllerDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *deviceName;
 @property (weak, nonatomic) IBOutlet UILabel *deviceOsForm;
 

@@ -84,6 +84,39 @@
     }
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    if(buttonIndex) {
+        PFObject *_checkout = self.detailItem;
+        if(_checkout != nil) {
+            PFObject *archiveLog = [PFObject objectWithClassName:@"CheckoutLog"];
+            archiveLog[@"dev_id"] = _checkout[@"dev_id"];
+            archiveLog[@"user_id"] = _checkout[@"user_id"];
+            archiveLog[@"signature"] = _checkout[@"signature"];
+            archiveLog[@"checkout_date"] = [_checkout createdAt];
+            [archiveLog saveInBackground];
+            [_checkout deleteInBackground];
+        }
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    
+}
+
+
+- (IBAction)returnDeviceButtonPress:(id)sender {
+    NSString *msg;
+    msg = [NSString stringWithFormat:@"Are you sure you would like to return this device without scanning its barcode?"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checking in a device"
+                                                    message:msg
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK",nil];
+    [alert show];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
