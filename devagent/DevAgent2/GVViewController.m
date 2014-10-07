@@ -8,6 +8,8 @@
 
 #import "GVViewController.h"
 #import "GVHTTPCommunication.h"
+#import "GVAppDelegate.h"
+#import <Parse/Parse.h>
 
 #define CHART_URL @"http://chart.apis.google.com/chart?cht=qr&chld=L&choe=UTF-8&chs=400x400&chl="
 
@@ -25,7 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _deviceId = [self retrieveDeviceId];
+
+    _deviceId = [(GVAppDelegate*)[[UIApplication sharedApplication] delegate] retrieveDeviceId];
     self.idLabel.text = _deviceId;
     
     _http = [[GVHTTPCommunication alloc] init];
@@ -43,8 +46,10 @@
                                                                                   (CFStringRef)ustr,
                                                                                   NULL,
                                                                                   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                  kCFStringEncodingUTF8 ));
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CHART_URL,encodedString]];
+    
+                                                                                                    kCFStringEncodingUTF8 ));
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",CHART_URL,encodedString];
+    NSURL *url = [NSURL URLWithString:urlStr];
     
     [_http retrieveURL:url successBlock:^(NSData *response) {
         
@@ -54,6 +59,10 @@
         }
     }];
 }
+- (IBAction)pushTestMessage:(id)sender {
+    
+    [PFPush sendPushMessageToChannelInBackground:_deviceId withMessage:@"Hello World!"];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -61,33 +70,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *) retrieveDeviceId
-{
-    NSString *deviceId = nil;
-    UIPasteboard *pasteboard = [UIPasteboard pasteboardWithName:@"youruniquestring" create:NO];
-    //NSLog([pasteboard string]);
-    if(pasteboard != nil) {
-        deviceId = [pasteboard string];
-        NSLog(@"unique device ID = %@", deviceId);
-    } else {
-        
-        //Create a unique id as a string
-        CFUUIDRef theUUID = CFUUIDCreate(NULL);
-        CFStringRef string = CFUUIDCreateString(NULL, theUUID);
-        
-        //create a new pasteboard with a unique identifier
-        UIPasteboard *pasteboard = [UIPasteboard pasteboardWithName:@"youruniquestring" create:YES];
-        
-        [pasteboard setPersistent:YES];
-        
-        //save the unique identifier string that we created earlier
-        deviceId = ((__bridge NSString*)string);
-        [pasteboard setString:deviceId];
-        
-        NSLog(@"newly generated device ID = %@", deviceId);
-        
-    }
-    return deviceId;
-}
 
 @end

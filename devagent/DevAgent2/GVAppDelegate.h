@@ -14,4 +14,5 @@
 -(void) incrementNetworkActivity;
 -(void) decrementNetworkActivity;
 -(void) resetNetworkActivity;
+- (NSString *) retrieveDeviceId;
 @end
