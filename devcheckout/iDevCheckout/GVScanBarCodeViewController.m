@@ -189,8 +189,11 @@
                 archiveLog[@"signature"] = _checkout[@"signature"];
                 archiveLog[@"checkout_date"] = [_checkout createdAt];
                 [archiveLog saveInBackground];
+                // notify client agent that device is now available.
+                [PFPush sendPushMessageToChannelInBackground:archiveLog[@"dev_id"] withMessage:archiveLog[@"user_id"]];
                 [_checkout deleteInBackground];
             }
+
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
 
