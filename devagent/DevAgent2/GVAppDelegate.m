@@ -8,6 +8,8 @@
 
 #import "GVAppDelegate.h"
 #import <Parse/Parse.h>
+#import "GVViewController.h"
+
 #define PARSE_APP_ID @"3k6jFJ5IYcetRe6tQ24yGms0P78RQuQYXy48idyP"
 #define PARSE_CLIENT_ID @"yJWzDV3D3p2itdpc86rEYkcpVOLf6pQqdU05qa3m"
 
@@ -77,6 +79,10 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
     NSLog(@"You just got notified!");
+    NSString *key = @"device_id";
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"the data" forKey:key];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAME  object:nil userInfo:dictionary];
+
 }
 
 //- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {

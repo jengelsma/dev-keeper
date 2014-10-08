@@ -27,6 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // register for server side notifications of checkout events
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(useNotificationWithString:)
+     name:NOTIFICATION_NAME
+     object:nil];
 
     _deviceId = [(GVAppDelegate*)[[UIApplication sharedApplication] delegate] retrieveDeviceId];
     self.idLabel.text = _deviceId;
@@ -70,5 +78,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)useNotificationWithString:(NSString *)str
+{
+    NSLog(@"your message is: %@", str);
+}
 
 @end

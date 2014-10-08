@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9E33544519B77E09009412F9"
-               BuildableName = "iDevCheckout.app"
+               BuildableName = "DevKeeper.app"
                BlueprintName = "DevKeeper"
                ReferencedContainer = "container:DevKeeper.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9E33546C19B77E09009412F9"
-               BuildableName = "iDevCheckoutTests.xctest"
+               BuildableName = "DevKeeperTests.xctest"
                BlueprintName = "DevKeeperTests"
                ReferencedContainer = "container:DevKeeper.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E33544519B77E09009412F9"
-            BuildableName = "iDevCheckout.app"
+            BuildableName = "DevKeeper.app"
             BlueprintName = "DevKeeper"
             ReferencedContainer = "container:DevKeeper.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E33544519B77E09009412F9"
-            BuildableName = "iDevCheckout.app"
+            BuildableName = "DevKeeper.app"
             BlueprintName = "DevKeeper"
             ReferencedContainer = "container:DevKeeper.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E33544519B77E09009412F9"
-            BuildableName = "iDevCheckout.app"
+            BuildableName = "DevKeeper.app"
             BlueprintName = "DevKeeper"
             ReferencedContainer = "container:DevKeeper.xcodeproj">
          </BuildableReference>

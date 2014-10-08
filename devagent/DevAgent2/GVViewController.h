@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define NOTIFICATION_NAME @"GVDeviceCheckOutNotification"
 
 @interface GVViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *barcodeImage;
