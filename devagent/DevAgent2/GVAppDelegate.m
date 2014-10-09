@@ -77,7 +77,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
+    //[PFPush handlePush:userInfo];
     NSLog(@"You just got notified!");
     NSString *key = @"device_id";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"the data" forKey:key];

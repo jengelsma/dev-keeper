@@ -66,10 +66,73 @@
             self.barcodeImage.image = bc;
         }
     }];
+    
+    
 }
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self getCheckoutRecord];
+    // query for checkup message here.
+    
+}
+
+- (void) updateViewPerCheckoutStatus:(BOOL)status
+{
+    self.view.backgroundColor = status ? [UIColor redColor] : [UIColor greenColor];
+    self.userThumbnail.hidden = !status;
+    self.signatureImage.hidden = !status;
+    self.userId.hidden = !status;
+    self.userName.hidden = !status;
+    self.checkOutHeader.hidden = !status;
+}
+
+- (void)getCheckoutRecord
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"DevOut"];
+    [query whereKey:@"dev_id" equalTo:_deviceId];
+    [query includeKey:@"device_obj"];
+    [query includeKey:@"user_obj"];
+    NSArray *checkouts = [query findObjects];
+    if(checkouts.count == 1) {
+        PFObject *checkout = checkouts[0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            PFObject *user = checkout[@"user_obj"];
+            self.userName.text = user[@"user_name"];
+            self.userId.text = user[@"user_id"];
+            PFFile *userImageFile = user[@"user_photo"];
+            [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:imageData];
+                    self.userThumbnail.image = image;
+                }
+            }];
+            PFFile *signatureFile = checkout[@"signature"];
+            [signatureFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:imageData];
+                    self.signatureImage.image = image;
+                } else {
+                    self.signatureImage.image = nil;
+                }
+            }];
+            
+            
+        });
+    }
+    
+    // whether we had a checkout or not, we need to make sure the screen config
+    // is correct.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateViewPerCheckoutStatus:(checkouts.count == 1)];
+    });
+}
+
 - (IBAction)pushTestMessage:(id)sender {
     
-    [PFPush sendPushMessageToChannelInBackground:_deviceId withMessage:@"Hello World!"];
+    //[PFPush sendPushMessageToChannelInBackground:_deviceId withMessage:@"Hello World!"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,6 +144,7 @@
 - (void)useNotificationWithString:(NSString *)str
 {
     NSLog(@"your message is: %@", str);
+    [self getCheckoutRecord];
 }
 
 @end
