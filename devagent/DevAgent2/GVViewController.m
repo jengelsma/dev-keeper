@@ -140,6 +140,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)refreshView:(id)sender {
+        [self getCheckoutRecord];
+}
 
 - (void)useNotificationWithString:(NSString *)str
 {
