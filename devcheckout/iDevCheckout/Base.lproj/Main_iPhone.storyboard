@@ -944,7 +944,7 @@
             </objects>
             <point key="canvasLocation" x="1497" y="-747"/>
         </scene>
-        <!--Device Detail Controller-->
+        <!--Device Detail Controller - Device Detail-->
         <scene sceneID="2vq-zM-PZj">
             <objects>
                 <tableViewController id="cqY-lm-Qf1" customClass="GVDeviceDetailController" sceneMemberID="viewController">
@@ -1073,6 +1073,26 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Skj-4E-ceg" style="IBUITableViewCellStyleDefault" id="x1S-nV-iPs">
+                                        <rect key="frame" x="0.0" y="759" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x1S-nV-iPs" id="94D-pM-reP">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Check Out History" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Skj-4E-ceg">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="GeB-tm-fA0" kind="push" id="jZW-b0-aYo"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1081,7 +1101,7 @@
                             <outlet property="delegate" destination="cqY-lm-Qf1" id="SFW-oT-mUO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jcp-6M-Q6q">
+                    <navigationItem key="navigationItem" title="Device Detail" id="jcp-6M-Q6q">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="VNi-Lv-EH0">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="cqY-lm-Qf1" id="QH7-1u-jDh"/>
@@ -1093,6 +1113,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="deviceId" destination="cRT-Un-NUa" id="ehy-6O-KkT"/>
                         <outlet property="deviceImage" destination="QFg-2t-MBf" id="fZr-jL-JVm"/>
@@ -1108,6 +1129,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cg9-c2-0qs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1552" y="-1495"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="fD8-IF-5cv">
+            <objects>
+                <tableViewController id="GeB-tm-fA0" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Kkg-dA-tNC">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9EW-Lo-j3J">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9EW-Lo-j3J" id="NO1-zk-R7t">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GeB-tm-fA0" id="VNY-3E-MK3"/>
+                            <outlet property="delegate" destination="GeB-tm-fA0" id="aWb-7B-r8P"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0mF-jt-Xw3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jx-6i-xGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="-1499"/>
         </scene>
     </scenes>
     <resources>
