@@ -80,7 +80,8 @@
 
 - (void) updateViewPerCheckoutStatus:(BOOL)status
 {
-    self.view.backgroundColor = status ? [UIColor redColor] : [UIColor greenColor];
+    //self.view.backgroundColor = status ? [UIColor redColor] : [UIColor greenColor];
+    self.status.text = status ? @"Status: Checked Out" : @"Status: Available";
     self.userThumbnail.hidden = !status;
     self.signatureImage.hidden = !status;
     self.userId.hidden = !status;
@@ -129,11 +130,6 @@
     });
 }
 
-- (IBAction)pushTestMessage:(id)sender {
-    
-    //[PFPush sendPushMessageToChannelInBackground:_deviceId withMessage:@"Hello World!"];
-    
-}
 
 - (void)didReceiveMemoryWarning
 {

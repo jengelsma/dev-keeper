@@ -508,7 +508,7 @@
 				GCC_PREFIX_HEADER = "iDevCheckout/DevKeeper-Prefix.pch";
 				INFOPLIST_FILE = "iDevCheckout/DevKeeper-Info.plist";
 				PRODUCT_NAME = DevKeeper;
-				PROVISIONING_PROFILE = "d90316f7-1d6b-4f94-967a-3e549c51878c";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,7 +528,7 @@
 				GCC_PREFIX_HEADER = "iDevCheckout/DevKeeper-Prefix.pch";
 				INFOPLIST_FILE = "iDevCheckout/DevKeeper-Info.plist";
 				PRODUCT_NAME = DevKeeper;
-				PROVISIONING_PROFILE = "d90316f7-1d6b-4f94-967a-3e549c51878c";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
