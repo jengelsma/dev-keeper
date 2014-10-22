@@ -84,13 +84,13 @@
 
 #pragma mark - UIPickerView delegate & data source methods
 
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
 // The number of rows of data
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     if(!self.formPickerIsShowing) {
         return _formPickerData.count;
@@ -123,7 +123,7 @@
 #pragma mark - Table view methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Row=%d",indexPath.row);
+    
     CGFloat height = self.tableView.rowHeight;
     
     if (indexPath.row == kFormPickerIndex) {

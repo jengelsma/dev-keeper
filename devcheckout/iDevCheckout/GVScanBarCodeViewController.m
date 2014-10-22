@@ -297,7 +297,7 @@
                 
                 NSData *jsonData = [[metadataObj stringValue] dataUsingEncoding:NSUTF8StringEncoding];
                 NSError *e;
-                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:nil error:&e];
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&e];
                 
                 if(e) {
                     dispatch_async(dispatch_get_main_queue(), ^{
