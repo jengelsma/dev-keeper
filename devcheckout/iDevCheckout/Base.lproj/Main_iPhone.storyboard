@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pH7-ND-Kfb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pH7-ND-Kfb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Master-->
+        <!--Master View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="GVMasterViewController" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="916" y="-1477"/>
         </scene>
-        <!--Select a User-->
+        <!--User Table View Controller - Select a User-->
         <scene sceneID="NBg-jg-ddx">
             <objects>
                 <tableViewController id="M9D-YN-RZk" customClass="GVUserTableViewController" sceneMemberID="viewController">
@@ -128,11 +128,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="tdn-qM-sAK" detailTextLabel="Kh0-Rd-mDc" imageView="fmg-KA-Igl" style="IBUITableViewCellStyleSubtitle" id="yPh-O3-Tnf">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="tdn-qM-sAK" detailTextLabel="Kh0-Rd-mDc" imageView="fmg-KA-Igl" style="IBUITableViewCellStyleSubtitle" id="yPh-O3-Tnf">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yPh-O3-Tnf" id="OiJ-MT-QV0">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tdn-qM-sAK">
@@ -155,6 +155,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="suE-fT-IOO" kind="push" id="qI2-kd-c01"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -168,18 +171,13 @@
                                 <action selector="cancelUserSelect:" destination="M9D-YN-RZk" id="dOA-ub-O0K"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="IFQ-ku-wFt">
-                            <connections>
-                                <segue destination="suE-fT-IOO" kind="push" id="r7R-iM-iNN"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYe-X7-mpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="309" y="86"/>
         </scene>
-        <!--Users-->
+        <!--User Table View Controller - Users-->
         <scene sceneID="EqT-CG-jJa">
             <objects>
                 <tableViewController id="7LX-e5-1r7" customClass="GVUserTableViewController" sceneMemberID="viewController">
@@ -270,7 +268,7 @@
             </objects>
             <point key="canvasLocation" x="-155" y="-611"/>
         </scene>
-        <!--DevKeeper-->
+        <!--Dashboard View Controller - DevKeeper-->
         <scene sceneID="nw8-wu-gSK">
             <objects>
                 <viewController id="qrq-eZ-R28" customClass="GVDashboardViewController" sceneMemberID="viewController">
@@ -374,7 +372,7 @@
             </objects>
             <point key="canvasLocation" x="309" y="-611"/>
         </scene>
-        <!--User Detail-->
+        <!--User Detail View Controller - User Detail-->
         <scene sceneID="dq3-1E-pAH">
             <objects>
                 <viewController id="vjQ-7N-kSR" customClass="GVUserDetailViewController" sceneMemberID="viewController">
@@ -705,6 +703,7 @@
                             <constraint firstAttribute="bottom" secondItem="A6E-Ts-MZw" secondAttribute="bottom" constant="57" id="upw-Ai-GLY"/>
                             <constraint firstItem="mt9-WO-tY8" firstAttribute="top" secondItem="P57-Dg-Y8m" secondAttribute="top" id="yug-MF-J5f"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cix-xM-wmK"/>
@@ -720,7 +719,7 @@
             </objects>
             <point key="canvasLocation" x="1816" y="1014"/>
         </scene>
-        <!--Detail-->
+        <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
                 <viewController title="Detail" id="Ah7-4n-0Wa" customClass="GVDetailViewController" sceneMemberID="viewController">
@@ -902,7 +901,7 @@
             </objects>
             <point key="canvasLocation" x="1497" y="-747"/>
         </scene>
-        <!--Device Detail-->
+        <!--Device Detail Controller - Device Detail-->
         <scene sceneID="2vq-zM-PZj">
             <objects>
                 <tableViewController id="cqY-lm-Qf1" customClass="GVDeviceDetailController" sceneMemberID="viewController">
@@ -1139,8 +1138,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="qI2-kd-c01"/>
         <segue reference="RG8-e0-cpv"/>
-        <segue reference="dlt-rB-4aj"/>
         <segue reference="lWy-bY-l1Q"/>
     </inferredMetricsTieBreakers>
 </document>

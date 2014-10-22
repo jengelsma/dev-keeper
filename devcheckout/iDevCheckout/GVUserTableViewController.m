@@ -196,7 +196,7 @@
     return YES;
 }
 */
-
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(self.displayMode == USER_SELECT_MODE) {
@@ -212,8 +212,8 @@
         
         
         lastSelectedIndexPath = indexPath;
-    }
 }
+*/
 
 #pragma mark - Navigation
 
