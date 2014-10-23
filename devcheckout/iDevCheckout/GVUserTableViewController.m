@@ -36,9 +36,6 @@
         
         self.imageKey = @"user_photo";
         
-        // The title for this table in the Navigation Controller.
-        self.title = @"Users";
-        
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
         
@@ -81,13 +78,18 @@
 {
     [super viewDidLoad];
     lastSelectedIndexPath = nil;
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-iPhone6.png"]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 65;
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    [self loadUserData];
+    
+    // The title for this table in the Navigation Controller.
+    self.title = (self.displayMode == USER_SELECT_MODE) ? @"Select A User" : @"Users";
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,8 +156,13 @@
         if (!error) {
             UIImage *image = [UIImage imageWithData:imageData];
             cell.imageView.image = image;
+            cell.imageView.layer.cornerRadius = 8.0f;
+            cell.imageView.clipsToBounds = YES;
+            cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y+15, 40,40);
         }
     }];
+    UIImageView *cellBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBg"]];
+    cell.backgroundView = cellBg;
     return cell;
 }
 

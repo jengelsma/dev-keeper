@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pH7-ND-Kfb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pH7-ND-Kfb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller - Master-->
+        <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="GVMasterViewController" sceneMemberID="viewController">
@@ -21,19 +21,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbF-8k-SfG">
-                                            <rect key="frame" x="15" y="10" width="54" height="54"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <rect key="frame" x="15" y="12" width="54" height="54"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIb-cR-5EN">
-                                            <rect key="frame" x="83" y="15" width="184" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="83" y="11" width="184" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-FW-LDo">
-                                            <rect key="frame" x="83" y="38" width="184" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="83" y="30" width="184" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ7-h0-4ud">
+                                            <rect key="frame" x="83" y="49" width="184" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -42,6 +45,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="dateLabel" destination="pJ7-h0-4ud" id="Bne-MG-3nj"/>
                                     <outlet property="detailLabel" destination="BiQ-FW-LDo" id="exh-qu-eT6"/>
                                     <outlet property="thumbnail" destination="BbF-8k-SfG" id="9Vo-qh-ibX"/>
                                     <outlet property="titleLabel" destination="jIb-cR-5EN" id="4AN-wk-cnp"/>
@@ -122,7 +126,7 @@
             </objects>
             <point key="canvasLocation" x="916" y="-1477"/>
         </scene>
-        <!--User Table View Controller - Select a User-->
+        <!--Select a User-->
         <scene sceneID="NBg-jg-ddx">
             <objects>
                 <tableViewController id="M9D-YN-RZk" customClass="GVUserTableViewController" sceneMemberID="viewController">
@@ -180,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="309" y="86"/>
         </scene>
-        <!--User Table View Controller - Users-->
+        <!--Users-->
         <scene sceneID="EqT-CG-jJa">
             <objects>
                 <tableViewController id="7LX-e5-1r7" customClass="GVUserTableViewController" sceneMemberID="viewController">
@@ -271,7 +275,7 @@
             </objects>
             <point key="canvasLocation" x="-155" y="-611"/>
         </scene>
-        <!--Dashboard View Controller - DevKeeper-->
+        <!--DevKeeper-->
         <scene sceneID="nw8-wu-gSK">
             <objects>
                 <viewController id="qrq-eZ-R28" customClass="GVDashboardViewController" sceneMemberID="viewController">
@@ -375,7 +379,7 @@
             </objects>
             <point key="canvasLocation" x="309" y="-611"/>
         </scene>
-        <!--User Detail View Controller - User Detail-->
+        <!--User Detail-->
         <scene sceneID="dq3-1E-pAH">
             <objects>
                 <viewController id="vjQ-7N-kSR" customClass="GVUserDetailViewController" sceneMemberID="viewController">
@@ -710,7 +714,6 @@
                             <constraint firstAttribute="bottom" secondItem="A6E-Ts-MZw" secondAttribute="bottom" constant="57" id="upw-Ai-GLY"/>
                             <constraint firstItem="mt9-WO-tY8" firstAttribute="top" secondItem="P57-Dg-Y8m" secondAttribute="top" id="yug-MF-J5f"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cix-xM-wmK"/>
@@ -726,7 +729,7 @@
             </objects>
             <point key="canvasLocation" x="1816" y="1014"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
                 <viewController title="Detail" id="Ah7-4n-0Wa" customClass="GVDetailViewController" sceneMemberID="viewController">
@@ -908,7 +911,7 @@
             </objects>
             <point key="canvasLocation" x="1497" y="-747"/>
         </scene>
-        <!--Device Detail Controller - Device Detail-->
+        <!--Device Detail-->
         <scene sceneID="2vq-zM-PZj">
             <objects>
                 <tableViewController id="cqY-lm-Qf1" customClass="GVDeviceDetailController" sceneMemberID="viewController">

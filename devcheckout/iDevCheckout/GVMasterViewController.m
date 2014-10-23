@@ -37,7 +37,7 @@
     [super viewDidLoad];
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-iPhone6.png"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	self.tableView.rowHeight = 75;
+	self.tableView.rowHeight = 85;
     
     /*
 	// Do any additional setup after loading the view, typically from a nib.
@@ -134,6 +134,14 @@
             cell.thumbnail.image = image;
         }
     }];
+    
+    NSDate* checkoutDate = object.createdAt;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    
+    cell.dateLabel.text = [dateFormatter stringFromDate:checkoutDate];
     
  /*
     cell.textLabel.text = user[@"user_name"];

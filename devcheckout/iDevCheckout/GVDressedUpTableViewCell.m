@@ -21,7 +21,7 @@
 
 - (void)awakeFromNib
 {
-    UIImageView *cellBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadowCellBG2"]];
+    UIImageView *cellBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBg"]];
     self.backgroundView = cellBg;
     self.thumbnail.layer.cornerRadius = 8.0f;
     self.thumbnail.clipsToBounds = YES;

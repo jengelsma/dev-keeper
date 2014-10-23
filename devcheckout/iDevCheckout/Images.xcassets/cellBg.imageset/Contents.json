@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "deviceImage.png"
+      "filename" : "shadowCellBG2-2.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "deviceImage@2x.png"
+      "filename" : "shadowCellBG2-1.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "shadowCellBG2.png"
     }
   ],
   "info" : {
