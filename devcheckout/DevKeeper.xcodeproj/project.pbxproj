@@ -43,6 +43,10 @@
 		9E9E8A8819C3634E006EF62F /* GVDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A8719C3634E006EF62F /* GVDashboardViewController.m */; };
 		9EB801E319C497CC006E3482 /* GVSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB801E219C497CC006E3482 /* GVSignatureViewController.m */; };
 		9EF1BAED19E0A54000D56CAF /* GVDeviceDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF1BAEC19E0A54000D56CAF /* GVDeviceDetailController.m */; };
+		9EFED8C419F9735500404D3F /* background-iphone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EFED8C219F9735500404D3F /* background-iphone6.png */; };
+		9EFED8C519F9735500404D3F /* shadowCellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EFED8C319F9735500404D3F /* shadowCellBG.png */; };
+		9EFED8C719F987B700404D3F /* shadowCellBG2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EFED8C619F987B700404D3F /* shadowCellBG2.png */; };
+		9EFED8CA19F98B6800404D3F /* GVDressedUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFED8C919F98B6800404D3F /* GVDressedUpTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,11 @@
 		9EB801E219C497CC006E3482 /* GVSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVSignatureViewController.m; sourceTree = "<group>"; };
 		9EF1BAEB19E0A54000D56CAF /* GVDeviceDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVDeviceDetailController.h; sourceTree = "<group>"; };
 		9EF1BAEC19E0A54000D56CAF /* GVDeviceDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVDeviceDetailController.m; sourceTree = "<group>"; };
+		9EFED8C219F9735500404D3F /* background-iphone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-iphone6.png"; sourceTree = "<group>"; };
+		9EFED8C319F9735500404D3F /* shadowCellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowCellBG.png; sourceTree = "<group>"; };
+		9EFED8C619F987B700404D3F /* shadowCellBG2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowCellBG2.png; sourceTree = "<group>"; };
+		9EFED8C819F98B6800404D3F /* GVDressedUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVDressedUpTableViewCell.h; sourceTree = "<group>"; };
+		9EFED8C919F98B6800404D3F /* GVDressedUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVDressedUpTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +200,13 @@
 				9E22EBF919BE413200058581 /* beep.mp3 */,
 				9E9E8A5F19C09BD6006EF62F /* Constants.h */,
 				9E33545819B77E09009412F9 /* GVAppDelegate.h */,
+				9EFED8C219F9735500404D3F /* background-iphone6.png */,
+				9EFED8C319F9735500404D3F /* shadowCellBG.png */,
+				9EFED8C619F987B700404D3F /* shadowCellBG2.png */,
 				9E33545919B77E09009412F9 /* GVAppDelegate.m */,
 				9E33545B19B77E09009412F9 /* Main_iPhone.storyboard */,
+				9EFED8C819F98B6800404D3F /* GVDressedUpTableViewCell.h */,
+				9EFED8C919F98B6800404D3F /* GVDressedUpTableViewCell.m */,
 				9E67B5FD19C9CCDB00EC1602 /* GVNewDeviceTableViewController.h */,
 				9E67B5FE19C9CCDB00EC1602 /* GVNewDeviceTableViewController.m */,
 				9EB801E119C497CC006E3482 /* GVSignatureViewController.h */,
@@ -331,7 +345,10 @@
 			files = (
 				9E33546019B77E09009412F9 /* Main_iPad.storyboard in Resources */,
 				9E22EBFA19BE413200058581 /* beep.mp3 in Resources */,
+				9EFED8C519F9735500404D3F /* shadowCellBG.png in Resources */,
 				9E33546819B77E09009412F9 /* Images.xcassets in Resources */,
+				9EFED8C419F9735500404D3F /* background-iphone6.png in Resources */,
+				9EFED8C719F987B700404D3F /* shadowCellBG2.png in Resources */,
 				9E33545D19B77E09009412F9 /* Main_iPhone.storyboard in Resources */,
 				9E33545419B77E09009412F9 /* InfoPlist.strings in Resources */,
 			);
@@ -359,6 +376,7 @@
 				9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */,
 				9E9E8A5E19C095F6006EF62F /* GVUserDetailViewController.m in Sources */,
 				9EB801E319C497CC006E3482 /* GVSignatureViewController.m in Sources */,
+				9EFED8CA19F98B6800404D3F /* GVDressedUpTableViewCell.m in Sources */,
 				9E33545619B77E09009412F9 /* main.m in Sources */,
 				9E33546319B77E09009412F9 /* GVMasterViewController.m in Sources */,
 				9E33546619B77E09009412F9 /* GVDetailViewController.m in Sources */,

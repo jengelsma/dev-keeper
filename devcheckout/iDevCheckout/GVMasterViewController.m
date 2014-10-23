@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "GVMasterViewController.h"
 #import "GVDetailViewController.h"
+#import "GVDressedUpTableViewCell.h"
 
 #include <sys/socket.h>
 #include <sys/sysctl.h>
@@ -34,6 +35,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-iPhone6.png"]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	self.tableView.rowHeight = 75;
+    
     /*
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -111,12 +116,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    GVDressedUpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     PFObject *object = _objects[indexPath.row];
     PFObject *device = object[@"device_obj"];
     PFObject *user = object[@"user_obj"];
     
+    
+    cell.titleLabel.text = user[@"user_name"];
+    cell.detailLabel.text = device[@"name"];
+    
+    PFFile *userImageFile = user[@"user_photo"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            cell.thumbnail.image = image;
+        }
+    }];
+    
+ /*
     cell.textLabel.text = user[@"user_name"];
     cell.detailTextLabel.text = device[@"name"];
     
@@ -128,6 +147,10 @@
         }
     }];
 
+
+    UIImageView *cellBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadowCellBG2"]];
+    cell.backgroundView = cellBg;
+*/
     return cell;
 }
 
