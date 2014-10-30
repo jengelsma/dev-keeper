@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GVDressedUpTableViewCell : UITableViewCell
+#include <Parse/Parse.h>
+@interface GVDressedUpTableViewCell : PFTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;

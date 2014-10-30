@@ -10,6 +10,7 @@
 #import "GVUserTableViewController.h"
 #import "GVUserDetailViewController.h"
 #import "GVScanBarCodeViewController.h"
+#import "GVDressedUpTableViewCell.h"
 
 @interface GVUserTableViewController ()
 {
@@ -80,7 +81,7 @@
     lastSelectedIndexPath = nil;
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-iPhone6.png"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.rowHeight = 65;
+    self.tableView.rowHeight = 85;
     
 }
 
@@ -142,6 +143,29 @@
 - (PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    GVDressedUpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    cell.titleLabel.text = object[@"user_name"];
+    cell.detailLabel.text = object[@"user_id"];
+    cell.dateLabel.text = [object.createdAt description];
+//    if(self.displayMode == USER_SELECT_MODE) {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
+    PFFile *userImageFile = object[@"user_photo"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            cell.thumbnail.image = image;
+            cell.thumbnail.layer.cornerRadius = 8.0f;
+            cell.thumbnail.clipsToBounds = YES;
+            //cell.thumbnail.frame = CGRectMake(cell.thumbnail.frame.origin.x, cell.thumbnail.frame.origin.y+15, 40,40);
+        }
+    }];
+    UIImageView *cellBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBg"]];
+    cell.backgroundView = cellBg;
+    return cell;
+
+    /*
     PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     //PFObject *object = _objects[indexPath.row];
@@ -164,6 +188,8 @@
     UIImageView *cellBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBg"]];
     cell.backgroundView = cellBg;
     return cell;
+*/
+
 }
 
 /*

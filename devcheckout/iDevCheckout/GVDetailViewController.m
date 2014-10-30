@@ -38,6 +38,10 @@
 
     if (self.detailItem) {
         
+
+        
+
+        
         // device
         PFObject *object = self.detailItem;
         PFObject *device = object[@"device_obj"];
@@ -52,6 +56,8 @@
                 if(!error) {
                     UIImage *image = [UIImage imageWithData:data];
                     self.deviceThumbnail.image = image;
+                    self.userThumbnail.layer.cornerRadius = 8.0f;
+                    self.userThumbnail.clipsToBounds = YES;
                 }
             }];
         }
@@ -67,6 +73,8 @@
                 if(!error) {
                     UIImage *image = [UIImage imageWithData:data];
                     self.userThumbnail.image = image;
+                    self.deviceThumbnail.layer.cornerRadius = 8.0f;
+                    self.deviceThumbnail.clipsToBounds = YES;
                 }
             }];
         }
