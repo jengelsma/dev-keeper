@@ -8,6 +8,7 @@
 
 #import "GVDeviceTableViewController.h"
 #import "GVDeviceDetailController.h"
+#import "GVDressedUpTableViewCell.h"
 
 @implementation GVDeviceTableViewController
 
@@ -41,6 +42,13 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-iPhone6.png"]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 85;
+}
 
 // Override to customize what kind of query to perform on the class. The default is to query for
 // all objects ordered by createdAt descending.
@@ -60,18 +68,26 @@
 
 - (PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    PFTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    GVDressedUpTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = object[@"name"];
-    cell.detailTextLabel.text = object[@"device_id"];
+    cell.titleLabel.text = object[@"name"];
+    cell.detailLabel.text = object[@"device_id"];
     cell.imageView.image = [UIImage imageNamed:@"deviceImage"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    cell.dateLabel.text = [NSString stringWithFormat:@"Device added on %@",[dateFormatter stringFromDate:object.createdAt]];
     
     PFFile *devThumbnail = object[@"device_photo"];
     if(devThumbnail) {
         [devThumbnail getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:imageData];
-                cell.imageView.image = image;
+                cell.thumbnail.image = image;
+                cell.thumbnail.layer.cornerRadius = 8.0f;
+                cell.thumbnail.clipsToBounds = YES;
             }
         }];
     }
