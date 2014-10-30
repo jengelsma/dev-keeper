@@ -148,6 +148,12 @@
     cell.titleLabel.text = object[@"user_name"];
     cell.detailLabel.text = object[@"user_id"];
     cell.dateLabel.text = [object.createdAt description];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    cell.dateLabel.text = [NSString stringWithFormat:@"User created on %@",[dateFormatter stringFromDate:object.createdAt]];
 //    if(self.displayMode == USER_SELECT_MODE) {
 //        cell.accessoryType = UITableViewCellAccessoryNone;
 //    }

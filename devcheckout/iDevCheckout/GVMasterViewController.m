@@ -141,7 +141,7 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
     
-    cell.dateLabel.text = [dateFormatter stringFromDate:checkoutDate];
+    cell.dateLabel.text = [NSString stringWithFormat:@"Out on %@",[dateFormatter stringFromDate:checkoutDate]];
     
  /*
     cell.textLabel.text = user[@"user_name"];
