@@ -10,6 +10,7 @@
 #import "GVUserTableViewController.h"
 #import "GVSignatureViewController.h"
 #import "GVScanBarCodeViewController.h"
+#import "GVMasterViewController.h"
 
 @implementation GVDashboardViewController
 
@@ -83,8 +84,9 @@
 {
     
     // ok, now have the table reload
-    UITableViewController *tbc = (UITableViewController *)self.childViewControllers[0];
-    [tbc.tableView reloadData];
+    GVMasterViewController *tbc = (GVMasterViewController *)self.childViewControllers[0];
+    //[tbc.tableView reloadData];
+    [tbc loadCheckouts];
 
 }
 

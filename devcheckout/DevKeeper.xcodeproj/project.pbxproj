@@ -508,7 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Engelsma (WDZPUVS2W7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -518,7 +518,7 @@
 				GCC_PREFIX_HEADER = "iDevCheckout/DevKeeper-Prefix.pch";
 				INFOPLIST_FILE = "iDevCheckout/DevKeeper-Info.plist";
 				PRODUCT_NAME = DevKeeper;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6eb058f9-c701-44af-a2a6-b2a1a9597781";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,7 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Engelsma (WDZPUVS2W7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,7 +538,7 @@
 				GCC_PREFIX_HEADER = "iDevCheckout/DevKeeper-Prefix.pch";
 				INFOPLIST_FILE = "iDevCheckout/DevKeeper-Info.plist";
 				PRODUCT_NAME = DevKeeper;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6eb058f9-c701-44af-a2a6-b2a1a9597781";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

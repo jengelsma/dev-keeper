@@ -14,4 +14,5 @@
 
 @property (strong, nonatomic) GVDetailViewController *detailViewController;
 
+- (void)loadCheckouts;
 @end
