@@ -63,7 +63,7 @@
     
     [checkInRecord saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(succeeded) {
-            [PFPush sendPushMessageToChannelInBackground:device[@"device_id"] withMessage:user[@"user_id"]];
+            [PFPush sendPushMessageToChannelInBackground:[NSString stringWithFormat:@"CH%@",device[@"device_id"]] withMessage:user[@"user_id"]];
             NSString *msg = [NSString stringWithFormat:@"Device %@ has been checked out by %@", device[@"device_id"],user[@"user_name"]];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Device Checked Out!"
                                                             message:msg

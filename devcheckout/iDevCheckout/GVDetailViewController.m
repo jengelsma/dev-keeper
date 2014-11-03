@@ -104,10 +104,21 @@
             archiveLog[@"user_id"] = _checkout[@"user_id"];
             archiveLog[@"signature"] = _checkout[@"signature"];
             archiveLog[@"checkout_date"] = [_checkout createdAt];
-            [archiveLog saveInBackground];
-            [_checkout deleteInBackground];
+//            [archiveLog saveInBackground];
+//            [_checkout deleteInBackground];
+            
+            [archiveLog saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                
+                // delete the checkout, then notify client agent that device is now available and pop to dashboard.
+                [_checkout deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    [PFPush sendPushMessageToChannelInBackground:[NSString stringWithFormat:@"CH%@",archiveLog[@"dev_id"]] withMessage:archiveLog[@"user_id"]];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                } ];
+            }];
+
+        } else {
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
-        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
 }

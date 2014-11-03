@@ -192,7 +192,7 @@
                     
                     // delete the checkout, then notify client agent that device is now available and pop to dashboard.
                     [_checkout deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        [PFPush sendPushMessageToChannelInBackground:archiveLog[@"dev_id"] withMessage:archiveLog[@"user_id"]];
+                        [PFPush sendPushMessageToChannelInBackground:[NSString stringWithFormat:@"CH%@",archiveLog[@"dev_id"]] withMessage:archiveLog[@"user_id"]];
                         [self.navigationController popToRootViewControllerAnimated:YES];
                     } ];
                 }];

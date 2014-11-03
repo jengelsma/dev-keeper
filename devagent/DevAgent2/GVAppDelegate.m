@@ -45,7 +45,7 @@
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     NSString *deviceId = [self retrieveDeviceId];
-    currentInstallation.channels = @[ deviceId ];
+    currentInstallation.channels = @[ [NSString stringWithFormat:@"CH%@",deviceId] ];
     [currentInstallation saveInBackground];
 }
 							
