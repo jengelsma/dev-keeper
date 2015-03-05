@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pH7-ND-Kfb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pH7-ND-Kfb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -298,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="-155" y="-611"/>
         </scene>
-        <!--DevKeeper-->
+        <!--Dashboard View Controller-->
         <scene sceneID="nw8-wu-gSK">
             <objects>
                 <viewController id="qrq-eZ-R28" customClass="GVDashboardViewController" sceneMemberID="viewController">
@@ -343,22 +344,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgE-GA-1Ar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C97-Bf-psE">
-                                        <rect key="frame" x="20" y="20" width="120" height="125"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="54a-jH-IEb"/>
-                                        </constraints>
-                                        <state key="normal" image="userMenu">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="7LX-e5-1r7" kind="push" id="hS9-Bj-iIS"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIb-jr-MpN">
-                                        <rect key="frame" x="180" y="20" width="120" height="125"/>
+                                        <rect key="frame" x="160" y="0.0" width="160" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="BJO-MA-WMC"/>
+                                            <constraint firstAttribute="height" constant="160" id="3Ih-2z-hSD"/>
+                                            <constraint firstAttribute="width" constant="160" id="rOp-tx-ub6"/>
                                         </constraints>
                                         <state key="normal" image="deviceMenu">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,21 +357,30 @@
                                             <segue destination="Hit-tK-w9R" kind="push" id="mdP-Yt-UvY"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irZ-l7-yvM">
-                                        <rect key="frame" x="0.0" y="159" width="320" height="6"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C97-Bf-psE">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="54a-jH-IEb"/>
+                                            <constraint firstAttribute="height" constant="160" id="Ioc-fv-HCi"/>
+                                        </constraints>
+                                        <state key="normal" image="userMenu">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7LX-e5-1r7" kind="push" id="hS9-Bj-iIS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="C97-Bf-psE" secondAttribute="bottom" constant="20" id="9pw-we-lMl"/>
-                                    <constraint firstAttribute="bottom" secondItem="AIb-jr-MpN" secondAttribute="bottom" constant="20" id="DUe-Pc-24r"/>
+                                    <constraint firstAttribute="bottom" secondItem="C97-Bf-psE" secondAttribute="bottom" constant="5" id="9pw-we-lMl"/>
+                                    <constraint firstAttribute="bottom" secondItem="AIb-jr-MpN" secondAttribute="bottom" constant="5" id="DUe-Pc-24r"/>
                                     <constraint firstAttribute="height" constant="165" id="KSv-U2-8vq"/>
-                                    <constraint firstAttribute="trailing" secondItem="AIb-jr-MpN" secondAttribute="trailing" constant="20" id="T4N-Jq-hq1"/>
-                                    <constraint firstItem="C97-Bf-psE" firstAttribute="top" secondItem="dgE-GA-1Ar" secondAttribute="top" constant="20" id="Zy4-4g-Osp"/>
+                                    <constraint firstAttribute="trailing" secondItem="AIb-jr-MpN" secondAttribute="trailing" id="T4N-Jq-hq1"/>
+                                    <constraint firstItem="C97-Bf-psE" firstAttribute="top" secondItem="dgE-GA-1Ar" secondAttribute="top" id="Zy4-4g-Osp"/>
                                     <constraint firstAttribute="width" constant="320" id="jK3-hs-St7"/>
-                                    <constraint firstItem="AIb-jr-MpN" firstAttribute="top" secondItem="dgE-GA-1Ar" secondAttribute="top" constant="20" id="pPr-DD-3Au"/>
-                                    <constraint firstItem="C97-Bf-psE" firstAttribute="leading" secondItem="dgE-GA-1Ar" secondAttribute="leading" constant="20" id="pdq-Jd-MGv"/>
+                                    <constraint firstItem="AIb-jr-MpN" firstAttribute="top" secondItem="dgE-GA-1Ar" secondAttribute="top" id="pPr-DD-3Au"/>
+                                    <constraint firstItem="C97-Bf-psE" firstAttribute="leading" secondItem="dgE-GA-1Ar" secondAttribute="leading" id="pdq-Jd-MGv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -396,11 +395,11 @@
                             <constraint firstAttribute="trailing" secondItem="dgE-GA-1Ar" secondAttribute="trailing" id="gJG-fH-4xw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="DevKeeper" id="7z5-BY-EhB"/>
+                    <navigationItem key="navigationItem" id="7z5-BY-EhB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fy-I0-CSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="-611"/>
+            <point key="canvasLocation" x="202" y="-611"/>
         </scene>
         <!--User Detail-->
         <scene sceneID="dq3-1E-pAH">
@@ -1160,10 +1159,10 @@
     <resources>
         <image name="deviceCamera" width="157" height="248"/>
         <image name="deviceImage" width="150" height="150"/>
-        <image name="deviceMenu" width="316" height="336"/>
+        <image name="deviceMenu" width="375" height="320"/>
         <image name="userCamera" width="200" height="200"/>
         <image name="userImage" width="200" height="200"/>
-        <image name="userMenu" width="316" height="336"/>
+        <image name="userMenu" width="375" height="320"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
