@@ -127,11 +127,15 @@
     cell.titleLabel.text = user[@"user_name"];
     cell.detailLabel.text = device[@"name"];
     
+    // make thumbnails circular
+    cell.thumbnail.layer.cornerRadius = 27;
+    
     PFFile *userImageFile = user[@"user_photo"];
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:imageData];
             cell.thumbnail.image = image;
+            
         }
     }];
     

@@ -319,12 +319,14 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Checkin" id="TGB-t3-B9y">
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="suE-fT-IOO" kind="push" identifier="CheckInDevice" id="dlt-rB-4aj"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="145" style="plain" systemItem="fixedSpace" id="h5p-nS-C8m"/>
                                     <barButtonItem title="Checkout" id="vxp-bR-P9w">
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="M9D-YN-RZk" kind="push" identifier="CheckOutDevice" id="45n-Je-DpY"/>
                                         </connections>
@@ -915,7 +917,7 @@
                             <constraint firstItem="bpz-uL-xuA" firstAttribute="top" secondItem="ysU-ly-10X" secondAttribute="bottom" constant="8" symbolic="YES" id="vqT-eV-82j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Device Checkout Details" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="Checkout Details" id="cra-N8-TIN"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="checkoutDate" destination="tEc-EC-6dr" id="fmG-zx-jjw"/>

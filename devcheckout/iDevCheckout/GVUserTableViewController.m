@@ -162,7 +162,7 @@
         if (!error) {
             UIImage *image = [UIImage imageWithData:imageData];
             cell.thumbnail.image = image;
-            cell.thumbnail.layer.cornerRadius = 8.0f;
+            cell.thumbnail.layer.cornerRadius = 27.0f;
             cell.thumbnail.clipsToBounds = YES;
             //cell.thumbnail.frame = CGRectMake(cell.thumbnail.frame.origin.x, cell.thumbnail.frame.origin.y+15, 40,40);
         }
