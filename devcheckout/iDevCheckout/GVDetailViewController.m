@@ -7,6 +7,7 @@
 //
 
 #import "GVDetailViewController.h"
+#import "GVCheckoutHistoryTableTableViewController.h"
 #import <Parse/Parse.h>
 
 @interface GVDetailViewController ()
@@ -37,10 +38,6 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        
-
-        
-
         
         // device
         PFObject *object = self.detailItem;
@@ -149,6 +146,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - Split view
 

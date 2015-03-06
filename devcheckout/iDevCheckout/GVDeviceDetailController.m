@@ -7,6 +7,7 @@
 //
 
 #import "GVDeviceDetailController.h"
+#import "GVCheckoutHistoryTableTableViewController.h"
 
 #define kFormPickerIndex 4
 #define kOsPickerIndex 6
@@ -312,7 +313,11 @@
     
 }
 
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    GVCheckoutHistoryTableTableViewController* dest = segue.destinationViewController;
+    dest.deviceId = self.deviceId.text;
+}
 
 
 @end
