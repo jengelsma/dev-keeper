@@ -104,8 +104,12 @@
 {
     if (photoPick)
     {
+        CGRect origRect = self.userImage.bounds;
         [UIView animateWithDuration:0.5 animations:^{
             self.userImage.bounds = CGRectZero;
+        } completion:^(BOOL flag) {
+            /* must restore the bounds to the original rectangle */
+            self.userImage.bounds = origRect;
         }];
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
