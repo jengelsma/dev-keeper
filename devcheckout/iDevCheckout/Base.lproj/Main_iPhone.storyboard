@@ -762,7 +762,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MMQ-IT-qOo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Checkout Details: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysU-ly-10X">
@@ -799,7 +799,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="os" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zel-04-o8Z">
-                                <rect key="frame" x="96" y="105" width="204" height="21"/>
+                                <rect key="frame" x="96" y="104" width="204" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -831,10 +831,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RxB-rT-acQ" userLabel="SigViewContainer">
-                                <rect key="frame" x="20" y="289" width="280" height="219"/>
+                                <rect key="frame" x="20" y="289" width="280" height="155"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qam-yC-P2X">
-                                        <rect key="frame" x="1" y="1" width="278" height="217"/>
+                                        <rect key="frame" x="1" y="1" width="278" height="153"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -846,7 +846,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joB-Yu-ZSg">
-                                <rect key="frame" x="203" y="518" width="97" height="30"/>
+                                <rect key="frame" x="203" y="454" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="6IR-oG-8DT"/>
                                 </constraints>
@@ -858,7 +858,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWN-Xa-xQh">
-                                <rect key="frame" x="96" y="197" width="204" height="21"/>
+                                <rect key="frame" x="96" y="196" width="204" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1157,6 +1157,7 @@
                                     <outlet property="detailLabel" destination="Zhf-Xc-ZEL" id="JqL-VR-Pal"/>
                                     <outlet property="thumbnail" destination="NKT-al-Khl" id="ZGT-F1-AiY"/>
                                     <outlet property="titleLabel" destination="bIu-Lc-T7f" id="MAs-tR-zxd"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="v28-Hq-t2O"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1194,6 +1195,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dlt-rB-4aj"/>
+        <segue reference="v28-Hq-t2O"/>
         <segue reference="lWy-bY-l1Q"/>
         <segue reference="RG8-e0-cpv"/>
     </inferredMetricsTieBreakers>
