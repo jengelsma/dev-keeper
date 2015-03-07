@@ -7,7 +7,7 @@
 //
 
 #import "GVDetailViewController.h"
-#import "GVCheckoutHistoryTableTableViewController.h"
+
 #import <Parse/Parse.h>
 
 @interface GVDetailViewController ()
@@ -98,11 +98,16 @@
         if(_checkout != nil) {
             PFObject *archiveLog = [PFObject objectWithClassName:@"CheckoutLog"];
             archiveLog[@"dev_id"] = _checkout[@"dev_id"];
-            archiveLog[@"user_id"] = _checkout[@"user_id"];
+            archiveLog[@"device_obj"] = _checkout[@"device_obj"];
             archiveLog[@"signature"] = _checkout[@"signature"];
+            archiveLog[@"user_id"] = _checkout[@"user_id"];
+            archiveLog[@"user_obj"] = _checkout[@"user_obj"];
             archiveLog[@"checkout_date"] = [_checkout createdAt];
-//            [archiveLog saveInBackground];
-//            [_checkout deleteInBackground];
+            
+//            archiveLog[@"dev_id"] = _checkout[@"dev_id"];
+//            archiveLog[@"user_id"] = _checkout[@"user_id"];
+//            archiveLog[@"signature"] = _checkout[@"signature"];
+//            archiveLog[@"checkout_date"] = [_checkout createdAt];
             
             [archiveLog saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 

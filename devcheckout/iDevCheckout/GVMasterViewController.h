@@ -13,6 +13,6 @@
 @interface GVMasterViewController : UITableViewController
 
 @property (strong, nonatomic) GVDetailViewController *detailViewController;
-
+@property (nonatomic,strong) NSString* deviceId;
 - (void)loadCheckouts;
 @end

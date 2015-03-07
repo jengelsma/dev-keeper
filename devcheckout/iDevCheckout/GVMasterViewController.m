@@ -51,8 +51,6 @@
     
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -67,13 +65,21 @@
 
 - (void)loadCheckouts
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"DevOut"];
+    // controller is used as master view as well as view to show historical checkouts.
+    PFQuery *query;
+    if(self.deviceId == nil) {
+        query = [PFQuery queryWithClassName:@"DevOut"];
+    } else {
+        query = [PFQuery queryWithClassName:@"CheckoutLog"];
+        [query whereKey:@"dev_id" equalTo:self.deviceId];
+    }
+
     [query includeKey:@"device_obj"];
     [query includeKey:@"user_obj"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            NSLog(@"Successfully retrieved %lu checkouts.", (unsigned long)objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
