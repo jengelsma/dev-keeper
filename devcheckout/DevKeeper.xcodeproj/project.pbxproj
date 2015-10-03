@@ -37,6 +37,7 @@
 		9E33549519B77FFD009412F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549419B77FFD009412F9 /* Security.framework */; };
 		9E33549719B78009009412F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549619B78009009412F9 /* StoreKit.framework */; };
 		9E33549919B78017009412F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E33549819B78017009412F9 /* SystemConfiguration.framework */; };
+		9E4A21D71BC01E0800AC5C3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4A21D61BC01E0800AC5C3B /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9E67B5FF19C9CCDB00EC1602 /* GVNewDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E67B5FE19C9CCDB00EC1602 /* GVNewDeviceTableViewController.m */; };
 		9E9E8A5E19C095F6006EF62F /* GVUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A5D19C095F6006EF62F /* GVUserDetailViewController.m */; };
 		9E9E8A8519C35B57006EF62F /* GVDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E8A8419C35B57006EF62F /* GVDeviceTableViewController.m */; };
@@ -96,6 +97,7 @@
 		9E33549419B77FFD009412F9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9E33549619B78009009412F9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E33549819B78017009412F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9E4A21D61BC01E0800AC5C3B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E67B5FD19C9CCDB00EC1602 /* GVNewDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVNewDeviceTableViewController.h; sourceTree = "<group>"; };
 		9E67B5FE19C9CCDB00EC1602 /* GVNewDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVNewDeviceTableViewController.m; sourceTree = "<group>"; };
 		9E9E8A5C19C095F6006EF62F /* GVUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserDetailViewController.h; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				9E33545919B77E09009412F9 /* GVAppDelegate.m */,
 				9EFED8C219F9735500404D3F /* background-iphone6.png */,
 				9E33545B19B77E09009412F9 /* Main_iPhone.storyboard */,
+				9E4A21D61BC01E0800AC5C3B /* LaunchScreen.storyboard */,
 				9EFED8C819F98B6800404D3F /* GVDressedUpTableViewCell.h */,
 				9EFED8C919F98B6800404D3F /* GVDressedUpTableViewCell.m */,
 				9E67B5FD19C9CCDB00EC1602 /* GVNewDeviceTableViewController.h */,
@@ -341,6 +344,7 @@
 				9E22EBFA19BE413200058581 /* beep.mp3 in Resources */,
 				9E33546819B77E09009412F9 /* Images.xcassets in Resources */,
 				9EFED8C419F9735500404D3F /* background-iphone6.png in Resources */,
+				9E4A21D71BC01E0800AC5C3B /* LaunchScreen.storyboard in Resources */,
 				9E33545D19B77E09009412F9 /* Main_iPhone.storyboard in Resources */,
 				9E33545419B77E09009412F9 /* InfoPlist.strings in Resources */,
 			);

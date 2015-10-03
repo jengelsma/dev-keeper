@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E4A21981BC013B200AC5C3B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4A21961BC013B200AC5C3B /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
 		9E4A21991BC013B200AC5C3B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4A21971BC013B200AC5C3B /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		9E4A21D51BC01C9400AC5C3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4A21D41BC01C9400AC5C3B /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9E98F2A319E46466001282F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F2A219E46466001282F9 /* AudioToolbox.framework */; };
 		9E98F2A519E4646F001282F9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F2A419E4646F001282F9 /* CFNetwork.framework */; };
 		9E98F2A719E46480001282F9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F2A619E46480001282F9 /* CoreLocation.framework */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		9E4A21961BC013B200AC5C3B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9E4A21971BC013B200AC5C3B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		9E4A21D41BC01C9400AC5C3B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E98F2A219E46466001282F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9E98F2A419E4646F001282F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9E98F2A619E46480001282F9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -164,6 +166,7 @@
 				9EAA229C19D3658D0089D7D7 /* GVHTTPCommunication.h */,
 				9EAA229D19D3658D0089D7D7 /* GVHTTPCommunication.m */,
 				9EAA21E419D0BF9E0089D7D7 /* Main.storyboard */,
+				9E4A21D41BC01C9400AC5C3B /* LaunchScreen.storyboard */,
 				9EAA21E719D0BF9E0089D7D7 /* GVViewController.h */,
 				9EAA21E819D0BF9E0089D7D7 /* GVViewController.m */,
 				9EAA21EA19D0BF9E0089D7D7 /* Images.xcassets */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAA21EB19D0BF9E0089D7D7 /* Images.xcassets in Resources */,
+				9E4A21D51BC01C9400AC5C3B /* LaunchScreen.storyboard in Resources */,
 				9EAA21DD19D0BF9E0089D7D7 /* InfoPlist.strings in Resources */,
 				9EAA21E619D0BF9E0089D7D7 /* Main.storyboard in Resources */,
 			);
