@@ -49,13 +49,23 @@
     }
     
     NSString *ustr = [NSString stringWithFormat:@"{\"id\" : \"%@\",\"model\" : \"%@\",\"os\" : \"%@\",\"form_factor\" : \"%@\"}",_deviceId, model, @"Apple", form];
+
+    /*
     NSString *encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                   NULL,
                                                                                   (CFStringRef)ustr,
                                                                                   NULL,
                                                                                   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-    
+       
                                                                                                     kCFStringEncodingUTF8 ));
+
+   */
+    
+
+    NSString *encodedString = [ustr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
+    
+    
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",CHART_URL,encodedString];
     NSURL *url = [NSURL URLWithString:urlStr];
     

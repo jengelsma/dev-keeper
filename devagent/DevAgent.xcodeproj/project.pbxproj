@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E98F2A019E46430001282F9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F29E19E46430001282F9 /* Bolts.framework */; };
-		9E98F2A119E46430001282F9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F29F19E46430001282F9 /* Parse.framework */; };
+		9E4A21981BC013B200AC5C3B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4A21961BC013B200AC5C3B /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		9E4A21991BC013B200AC5C3B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4A21971BC013B200AC5C3B /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
 		9E98F2A319E46466001282F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F2A219E46466001282F9 /* AudioToolbox.framework */; };
 		9E98F2A519E4646F001282F9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F2A419E4646F001282F9 /* CFNetwork.framework */; };
 		9E98F2A719E46480001282F9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E98F2A619E46480001282F9 /* CoreLocation.framework */; };
@@ -46,8 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9E98F29E19E46430001282F9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		9E98F29F19E46430001282F9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		9E4A21961BC013B200AC5C3B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		9E4A21971BC013B200AC5C3B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9E98F2A219E46466001282F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9E98F2A419E4646F001282F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9E98F2A619E46480001282F9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -92,13 +92,13 @@
 				9E98F2AB19E46499001282F9 /* MobileCoreServices.framework in Frameworks */,
 				9E98F2A919E4648E001282F9 /* libz.dylib in Frameworks */,
 				9E98F2A719E46480001282F9 /* CoreLocation.framework in Frameworks */,
+				9E4A21981BC013B200AC5C3B /* Bolts.framework in Frameworks */,
 				9E98F2A519E4646F001282F9 /* CFNetwork.framework in Frameworks */,
 				9E98F2A319E46466001282F9 /* AudioToolbox.framework in Frameworks */,
+				9E4A21991BC013B200AC5C3B /* Parse.framework in Frameworks */,
 				9EAA21D519D0BF9E0089D7D7 /* CoreGraphics.framework in Frameworks */,
 				9EAA21D719D0BF9E0089D7D7 /* UIKit.framework in Frameworks */,
 				9EAA21D319D0BF9E0089D7D7 /* Foundation.framework in Frameworks */,
-				9E98F2A019E46430001282F9 /* Bolts.framework in Frameworks */,
-				9E98F2A119E46430001282F9 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +137,8 @@
 		9EAA21D119D0BF9E0089D7D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E4A21961BC013B200AC5C3B /* Bolts.framework */,
+				9E4A21971BC013B200AC5C3B /* Parse.framework */,
 				9E98F2B219E464C3001282F9 /* SystemConfiguration.framework */,
 				9E98F2B019E464B8001282F9 /* StoreKit.framework */,
 				9E98F2AE19E464AE001282F9 /* Security.framework */,
@@ -146,8 +148,6 @@
 				9E98F2A619E46480001282F9 /* CoreLocation.framework */,
 				9E98F2A419E4646F001282F9 /* CFNetwork.framework */,
 				9E98F2A219E46466001282F9 /* AudioToolbox.framework */,
-				9E98F29E19E46430001282F9 /* Bolts.framework */,
-				9E98F29F19E46430001282F9 /* Parse.framework */,
 				9EAA21D219D0BF9E0089D7D7 /* Foundation.framework */,
 				9EAA21D419D0BF9E0089D7D7 /* CoreGraphics.framework */,
 				9EAA21D619D0BF9E0089D7D7 /* UIKit.framework */,
@@ -250,6 +250,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jonathan Engelsma";
 				TargetAttributes = {
+					9EAA21CE19D0BF9E0089D7D7 = {
+						DevelopmentTeam = 984FU6FGBN;
+					};
 					9EAA21EF19D0BF9E0089D7D7 = {
 						TestTargetID = 9EAA21CE19D0BF9E0089D7D7;
 					};
@@ -385,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -417,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -428,7 +431,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Engelsma (WDZPUVS2W7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -436,8 +440,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevAgent2/DevAgent-Prefix.pch";
 				INFOPLIST_FILE = "DevAgent2/DevAgent-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_NAME = DevAgent;
-				PROVISIONING_PROFILE = "90baa7cb-d1a2-410b-9efc-5f330daffd57";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -447,7 +452,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Engelsma (WDZPUVS2W7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -455,8 +461,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevAgent2/DevAgent-Prefix.pch";
 				INFOPLIST_FILE = "DevAgent2/DevAgent-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_NAME = DevAgent;
-				PROVISIONING_PROFILE = "90baa7cb-d1a2-410b-9efc-5f330daffd57";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
